@@ -44,7 +44,7 @@ export default function Home() {
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl" />
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-500/5 rounded-full blur-3xl" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,#070b17_70%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,#0a0f1a_70%)]" />
         </div>
         <div className="container-max mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 relative">
           <div className="max-w-4xl mx-auto text-center">
