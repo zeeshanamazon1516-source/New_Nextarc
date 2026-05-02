@@ -52,7 +52,7 @@ const posts = [
   },
   {
     title: 'Quick Commerce in the UAE: Why 30-Minute Delivery Is the New Standard',
-    excerpt: 'From groceries to electronics, consumers now expect delivery in under an hour. Learn how brands are adapting to quick commerce platforms like Noon Minutes, Talabat Mart, and Amazon Fresh to capture impulse-driven demand.',
+    excerpt: 'From groceries to electronics, consumers now expect delivery in under an hour. Learn how brands are adapting to quick commerce platforms like Noon Minutes, Talabat Mart, and Amazon Fresh.',
     category: 'Quick Commerce',
     readTime: '8 min read',
     date: 'Apr 28, 2026',
@@ -64,24 +64,24 @@ export default function Blog() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-16 sm:pt-40 sm:pb-20 overflow-hidden">
+      <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
         <div className="absolute inset-0">
-          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-brand-500/8 rounded-full blur-3xl" />
+          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-brand-100/30 rounded-full blur-3xl" />
         </div>
         <div className="container-max mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-3xl mx-auto text-center">
             <ScrollReveal>
-              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-brand-500/10 text-brand-400 border border-brand-500/20 mb-4">
+              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-brand-50 text-brand-600 border border-brand-100 mb-4">
                 Blog
               </span>
             </ScrollReveal>
             <ScrollReveal delay={100}>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-6">
                 Ecommerce <span className="gradient-text">Insights</span>
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={200}>
-              <p className="text-lg text-dark-300 leading-relaxed">
+              <p className="text-lg text-slate-500 leading-relaxed">
                 Expert guides, tips, and strategies to help you grow your ecommerce business in the UAE and beyond.
               </p>
             </ScrollReveal>
@@ -90,12 +90,12 @@ export default function Blog() {
       </section>
 
       {/* Posts */}
-      <section className="section-padding">
+      <section className="section-padding bg-white">
         <div className="container-max mx-auto">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {posts.map((post, i) => (
               <ScrollReveal key={post.title} delay={i * 80}>
-                <article className="glass-card overflow-hidden h-full flex flex-col group cursor-pointer">
+                <article className="card overflow-hidden h-full flex flex-col group cursor-pointer">
                   <div className="aspect-[16/10] overflow-hidden">
                     <img
                       src={post.image}
@@ -105,14 +105,14 @@ export default function Blog() {
                     />
                   </div>
                   <div className="p-6 flex flex-col flex-1">
-                    <span className="inline-block self-start px-3 py-1 rounded-full text-xs font-medium bg-brand-500/10 text-brand-400 mb-3">
+                    <span className="inline-block self-start px-3 py-1 rounded-full text-xs font-medium bg-brand-50 text-brand-600 mb-3">
                       {post.category}
                     </span>
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-brand-400 transition-colors">
+                    <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-brand-600 transition-colors">
                       {post.title}
                     </h3>
-                    <p className="text-dark-300 text-sm leading-relaxed flex-1 mb-4">{post.excerpt}</p>
-                    <div className="flex items-center justify-between text-dark-400 text-xs">
+                    <p className="text-slate-500 text-sm leading-relaxed flex-1 mb-4">{post.excerpt}</p>
+                    <div className="flex items-center justify-between text-slate-400 text-xs">
                       <span className="flex items-center gap-1">
                         <Calendar className="w-3.5 h-3.5" />
                         {post.date}
