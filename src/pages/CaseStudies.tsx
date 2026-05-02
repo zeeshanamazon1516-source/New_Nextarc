@@ -1,28 +1,28 @@
-import { MessageCircle, TrendingUp, Target, DollarSign, ArrowDown, ArrowUp } from 'lucide-react';
+import { MessageCircle, TrendingUp, Target, DollarSign, ArrowDown, ArrowUp, Globe } from 'lucide-react';
 import { WHATSAPP_URL } from '../lib/constants';
 import ScrollReveal from '../components/ScrollReveal';
 
 const cases = [
   {
-    title: 'Fashion Brand Achieves 120% Sales Growth',
-    category: 'Amazon UAE',
-    challenge: 'A fashion brand was struggling with low visibility and stagnant sales on Amazon UAE. Their listings were not optimized, ad campaigns had poor structure, and ACOS was above 40%.',
-    solution: 'We restructured their entire catalog with SEO-optimized listings, launched targeted Sponsored Products and Brands campaigns, and created premium A+ content for top sellers.',
+    title: 'Fashion Brand Scales to 3 Marketplaces',
+    category: 'Amazon + Noon + Trendyol',
+    challenge: 'A UAE-based fashion brand was only selling on Amazon UAE with stagnant sales. They wanted to expand but had no strategy for Trendyol or multi-marketplace advertising.',
+    solution: 'We optimized their Amazon UAE ads, launched them on Noon with full catalog setup, and expanded to Trendyol with localized listings and promoted ads strategy.',
     results: [
-      { metric: '+120%', label: 'Sales Growth', icon: TrendingUp, positive: true },
-      { metric: '40% → 22%', label: 'ACOS Reduced', icon: ArrowDown, positive: true },
+      { metric: '+120%', label: 'Total Sales Growth', icon: TrendingUp, positive: true },
+      { metric: '3', label: 'Marketplaces Active', icon: Globe, positive: true },
       { metric: '+85%', label: 'Organic Traffic', icon: ArrowUp, positive: true },
       { metric: '90 Days', label: 'Time to Results', icon: Target, positive: true },
     ],
     color: 'from-brand-500 to-brand-600',
   },
   {
-    title: 'ACOS Reduced from 45% to 18%',
-    category: 'Health & Beauty',
-    challenge: 'A health and beauty brand was spending heavily on ads with diminishing returns. ACOS had climbed to 45%, eating into margins, and they had no clear strategy for improvement.',
-    solution: 'We performed a complete ad account audit, restructured campaigns by match type, implemented negative keywords aggressively, and optimized bids using our proprietary data models.',
+    title: 'Health Brand ACOS from 45% to 18% on Amazon & Temu',
+    category: 'Amazon UAE + Temu',
+    challenge: 'A health and beauty brand was overspending on Amazon ads (45% ACOS) and wanted to diversify to Temu but didn\'t know how to structure ads on both platforms.',
+    solution: 'We restructured Amazon campaigns, implemented aggressive negative keywords, and simultaneously launched their top sellers on Temu with optimized promotional strategy.',
     results: [
-      { metric: '18%', label: 'New ACOS', icon: Target, positive: true },
+      { metric: '18%', label: 'Amazon ACOS', icon: Target, positive: true },
       { metric: '+60%', label: 'Revenue Growth', icon: DollarSign, positive: true },
       { metric: '2.5X', label: 'ROAS Improvement', icon: TrendingUp, positive: true },
       { metric: '60 Days', label: 'Time to Results', icon: Target, positive: true },
@@ -30,17 +30,30 @@ const cases = [
     color: 'from-accent-500 to-accent-600',
   },
   {
-    title: '3X Revenue Growth for Electronics Brand',
-    category: 'Multi-Platform',
-    challenge: 'An electronics brand was present on Amazon and Noon but underperforming on both. They had no cohesive strategy, inconsistent branding, and were losing market share to competitors.',
-    solution: 'We unified their marketplace strategy, optimized pricing across platforms, launched coordinated ad campaigns, and created consistent premium creative content for both marketplaces.',
+    title: '5X Growth via USA & UK Expansion',
+    category: 'International Expansion',
+    challenge: 'An electronics brand was doing well in UAE but had plateaued. They wanted to enter the US and UK markets but lacked the knowledge of FBA logistics, compliance, and local ad strategy.',
+    solution: 'We handled full market entry for Amazon USA and UK - from FBA setup and localized listings to launch advertising campaigns. Simultaneously maintained their UAE marketplace presence.',
     results: [
-      { metric: '3X', label: 'Revenue Growth', icon: DollarSign, positive: true },
-      { metric: '+200%', label: 'Ad Revenue', icon: TrendingUp, positive: true },
-      { metric: '25%', label: 'Market Share Gain', icon: ArrowUp, positive: true },
-      { metric: '90 Days', label: 'Time to Results', icon: Target, positive: true },
+      { metric: '5X', label: 'Total Revenue Growth', icon: DollarSign, positive: true },
+      { metric: '3 Markets', label: 'UAE + USA + UK', icon: Globe, positive: true },
+      { metric: '+300%', label: 'Ad Revenue', icon: TrendingUp, positive: true },
+      { metric: '120 Days', label: 'Time to Results', icon: Target, positive: true },
     ],
     color: 'from-brand-500 to-accent-500',
+  },
+  {
+    title: 'Trendyol Launch Generates $200K in 60 Days',
+    category: 'Trendyol',
+    challenge: 'A home & lifestyle brand wanted to enter the Turkish market via Trendyol but had zero presence, no local knowledge, and needed end-to-end marketplace setup.',
+    solution: 'We handled full Trendyol onboarding, localized 50+ product listings, set up promoted listings strategy, and managed pricing to be competitive in the Turkish market.',
+    results: [
+      { metric: '$200K', label: 'Revenue in 60 Days', icon: DollarSign, positive: true },
+      { metric: '50+', label: 'Products Launched', icon: ArrowUp, positive: true },
+      { metric: '22%', label: 'ACOS Achieved', icon: ArrowDown, positive: true },
+      { metric: '60 Days', label: 'Time to Results', icon: Target, positive: true },
+    ],
+    color: 'from-brand-600 to-brand-500',
   },
 ];
 

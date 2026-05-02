@@ -1,40 +1,40 @@
 import {
   MessageCircle, ArrowRight, AlertTriangle, CheckCircle2, Star,
-  TrendingUp, Target, DollarSign, BarChart3, Search, Palette, Database,
+  TrendingUp, Target, DollarSign, BarChart3, Search, Palette, Globe,
   Clock, Shield
 } from 'lucide-react';
 import { WHATSAPP_URL, WHATSAPP_AUDIT_URL } from '../lib/constants';
 import ScrollReveal from '../components/ScrollReveal';
 
 const problems = [
-  { icon: AlertTriangle, text: 'Low sales and stagnant revenue' },
-  { icon: TrendingUp, text: 'High ACOS eating into your margins' },
-  { icon: Search, text: 'Poor visibility and low ranking' },
-  { icon: Target, text: 'Low conversion rates on listings' },
+  { icon: AlertTriangle, text: 'Low sales and stagnant revenue across marketplaces' },
+  { icon: TrendingUp, text: 'High ACOS eating into your margins on ads' },
+  { icon: Search, text: 'Poor visibility on Amazon, Noon, Trendyol, or Temu' },
+  { icon: Target, text: 'No clear strategy for international expansion' },
 ];
 
 const solutions = [
-  { title: 'Listing Optimization', desc: 'SEO-first titles, bullets, and A+ content that rank and convert.' },
-  { title: 'Ads Strategy', desc: 'Data-driven campaigns that maximize ROAS and reduce wasted spend.' },
-  { title: 'Data Insights', desc: 'Custom analytics that reveal exactly where your growth opportunities are.' },
+  { title: 'Marketplace Advertising', desc: 'Performance ads across Amazon, Noon, Trendyol, and Temu that maximize ROAS.' },
+  { title: 'Global Expansion', desc: 'Launch your brand in USA, UK, and Europe with localized strategy and ads.' },
+  { title: 'Data-Driven Optimization', desc: 'Cross-platform analytics that reveal exactly where your growth opportunities are.' },
 ];
 
 const results = [
   { metric: '+120%', label: 'Sales Growth', icon: TrendingUp },
   { metric: '45% to 18%', label: 'ACOS Reduced', icon: Target },
-  { metric: '3X', label: 'Revenue Growth', icon: DollarSign },
+  { metric: '5X', label: 'Growth via Expansion', icon: DollarSign },
 ];
 
 const testimonials = [
-  { name: 'Ahmed K.', text: 'Sales doubled fast. The team really delivers on their promises.' },
-  { name: 'Sara M.', text: 'Great ROI. Our ad spend is half what it was but revenue is up 60%.' },
+  { name: 'Ahmed K.', text: 'Sales doubled across Amazon and Noon. They also launched us on Trendyol seamlessly.' },
+  { name: 'Sara M.', text: 'Expanded to UK Amazon and Temu with their help. Revenue up 5X in 6 months.' },
 ];
 
 const servicesShort = [
-  { icon: BarChart3, title: 'Ads Management' },
+  { icon: BarChart3, title: 'Marketplace Ads' },
+  { icon: Globe, title: 'Global Expansion' },
   { icon: Search, title: 'Listing Optimization' },
-  { icon: Palette, title: 'Creative Content' },
-  { icon: Database, title: 'Analytics & Reporting' },
+  { icon: Palette, title: 'Creative & A+ Content' },
 ];
 
 const auditIncludes = [
@@ -75,18 +75,18 @@ export default function Landing() {
           <div className="max-w-3xl mx-auto text-center">
             <ScrollReveal>
               <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-brand-500/10 text-brand-400 border border-brand-500/20 mb-6">
-                Ecommerce Growth Agency
+                Ecommerce Ad Agency
               </span>
             </ScrollReveal>
             <ScrollReveal delay={100}>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-[1.1] text-balance mb-6">
-                Scale Your Amazon & Noon Sales in{' '}
+                Scale on Amazon, Noon, Trendyol & Temu in{' '}
                 <span className="gradient-text">90 Days</span>
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <p className="text-lg sm:text-xl text-dark-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-                We increase revenue, reduce ACOS, and scale your store with data-driven strategy and expert execution.
+                We manage marketplace ads, optimize listings, and expand brands into USA, UK, and global markets.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={300}>
@@ -299,7 +299,7 @@ export default function Landing() {
               Ready to Scale?
             </h2>
             <p className="text-dark-300 text-lg max-w-xl mx-auto mb-8">
-              Join 100+ brands that have transformed their ecommerce business with NextArc.
+              Join 150+ brands that scale across global marketplaces with NextArc.
             </p>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-whatsapp text-xl px-10 py-5 animate-pulse-glow">
               <MessageCircle className="w-6 h-6" />

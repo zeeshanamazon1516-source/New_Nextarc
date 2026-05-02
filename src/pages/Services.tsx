@@ -1,56 +1,56 @@
-import { MessageCircle, ArrowRight, ShoppingCart, BarChart3, Search, Palette, TrendingUp, Database, CheckCircle2, Lightbulb, Zap } from 'lucide-react';
+import { MessageCircle, ArrowRight, ShoppingCart, BarChart3, Search, Palette, Database, CheckCircle2, Lightbulb, Zap, Globe } from 'lucide-react';
 import { WHATSAPP_URL } from '../lib/constants';
 import ScrollReveal from '../components/ScrollReveal';
 import { Link } from 'react-router-dom';
 
 const services = [
   {
-    icon: ShoppingCart,
-    title: 'Ecommerce Account Management',
-    desc: 'Complete store management from inventory and pricing to daily optimization and reporting. We handle the operations so you can focus on growing your brand.',
-    features: ['Daily account monitoring', 'Inventory management', 'Pricing strategy', 'Performance reporting', 'Competitor analysis', 'Account health maintenance'],
+    icon: BarChart3,
+    title: 'Marketplace Advertising (PPC & Sponsored Ads)',
+    desc: 'Performance-driven ad campaigns across Amazon, Noon, Trendyol, and Temu. We manage your entire ad strategy to maximize ROAS and scale profitably.',
+    features: ['Amazon Sponsored Products & Brands & Display', 'Noon Ads campaign management', 'Trendyol promoted listings & ads', 'Temu advertising optimization', 'ACOS reduction & bid automation', 'Weekly performance reports & scaling'],
   },
   {
-    icon: BarChart3,
-    title: 'Amazon & Noon Ads Management',
-    desc: 'Data-driven advertising campaigns that maximize your return on ad spend while systematically reducing your ACOS across all marketplace platforms.',
-    features: ['Sponsored Products & Brands', 'Campaign structure optimization', 'Bid management & automation', 'Keyword research & targeting', 'ACOS reduction strategy', 'Weekly performance reports'],
+    icon: ShoppingCart,
+    title: 'Marketplace Account Management',
+    desc: 'Full-service account management across Amazon, Noon, Trendyol, and Temu. From daily operations to growth strategy, we handle everything.',
+    features: ['Multi-marketplace daily monitoring', 'Inventory & pricing strategy', 'Catalog management & compliance', 'Performance reporting', 'Competitor analysis', 'Account health maintenance'],
+  },
+  {
+    icon: Globe,
+    title: 'International Market Expansion (USA & UK)',
+    desc: 'We help brands expand from local markets into the USA, UK, and Europe. Full market entry strategy, localized listings, compliant setup, and launch advertising.',
+    features: ['USA Amazon FBA/FBM setup', 'UK marketplace launch strategy', 'Localized listing & keyword optimization', 'Cross-border logistics guidance', 'Market research & competitor mapping', 'Launch advertising campaigns'],
   },
   {
     icon: Search,
     title: 'Listing Optimization',
-    desc: 'SEO-first approach to product listings that improves organic ranking, click-through rates, and conversion rates across Amazon, Noon, and Shopify.',
-    features: ['SEO title optimization', 'Bullet point copywriting', 'Backend keyword research', 'Search term optimization', 'Category & browse node setup', 'A/B testing'],
+    desc: 'SEO-first approach to product listings optimized for each marketplace algorithm - Amazon A9, Noon, Trendyol, and Temu search ranking.',
+    features: ['Platform-specific SEO optimization', 'Bullet point & description copywriting', 'Backend keyword research', 'Search term & attribute optimization', 'Category & browse node setup', 'A/B testing & conversion optimization'],
   },
   {
     icon: Palette,
     title: 'Creative & A+ Content',
-    desc: 'High-converting visual content that stops the scroll and turns browsers into buyers. From product photography to enhanced brand content.',
-    features: ['Product infographics', 'Lifestyle imagery', 'A+ / Enhanced content', 'Storefront design', 'Brand story content', 'Video content'],
-  },
-  {
-    icon: TrendingUp,
-    title: 'SEO & Organic Growth',
-    desc: 'Long-term organic growth strategies that reduce ad dependency and build sustainable traffic through search engine and marketplace optimization.',
-    features: ['Keyword ranking strategy', 'Content optimization', 'Review management', 'Organic rank tracking', 'Competitor gap analysis', 'Authority building'],
+    desc: 'High-converting visual content tailored for each marketplace. From product photography to enhanced brand content that drives clicks and conversions.',
+    features: ['Product infographics', 'Lifestyle imagery', 'A+ / Enhanced brand content', 'Storefront & brand page design', 'Video content creation', 'Platform-specific creative formats'],
   },
   {
     icon: Lightbulb,
     title: 'Product Recommendation & Market Research',
-    desc: 'We help you identify winning products based on market demand, competition analysis, and data insights to maximize your success before you even launch.',
-    features: ['Trending product research', 'Market demand analysis', 'Competitor benchmarking', 'Profit margin estimation', 'Launch strategy guidance'],
+    desc: 'Identify winning products for each marketplace based on demand, competition, and margin analysis. Know what to sell and where before you invest.',
+    features: ['Marketplace-specific demand analysis', 'Cross-platform opportunity mapping', 'Competitor benchmarking', 'Profit margin estimation', 'Launch strategy by platform', 'Trend & seasonality insights'],
   },
   {
     icon: Zap,
     title: 'Quick Commerce Strategy',
-    desc: 'Tap into the fastest-growing channel in UAE retail. We help brands launch and scale on rapid-delivery platforms like Noon Minutes, Talabat Mart, and Amazon Fresh to capture high-intent, impulse-driven demand.',
+    desc: 'Launch and scale on rapid-delivery platforms like Noon Minutes, Talabat Mart, and Amazon Fresh. Capture high-intent, impulse-driven demand in the UAE.',
     features: ['Platform onboarding & setup', 'Dark store inventory planning', 'Rapid-delivery listing optimization', 'Promotional calendar management', 'Real-time stock monitoring', 'Performance analytics & reporting'],
   },
   {
     icon: Database,
-    title: 'Data Analytics & Reporting',
-    desc: 'Custom analytics dashboards and regular reporting that give you complete visibility into your ecommerce performance and growth metrics.',
-    features: ['Custom dashboards', 'ROAS & ACOS tracking', 'Conversion analysis', 'Revenue attribution', 'Trend forecasting', 'Monthly strategy reviews'],
+    title: 'Data Analytics & Cross-Platform Reporting',
+    desc: 'Unified analytics dashboards tracking performance across all your marketplaces. One view for Amazon, Noon, Trendyol, and Temu metrics.',
+    features: ['Cross-platform dashboards', 'ROAS & ACOS tracking by marketplace', 'Conversion analysis', 'Revenue attribution by channel', 'Trend forecasting', 'Monthly strategy reviews'],
   },
 ];
 
@@ -71,12 +71,12 @@ export default function Services() {
             </ScrollReveal>
             <ScrollReveal delay={100}>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-6">
-                Everything You Need to <span className="gradient-text">Scale</span>
+                Marketplace Ads & Growth <span className="gradient-text">That Scales</span>
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <p className="text-lg text-dark-300 leading-relaxed">
-                End-to-end ecommerce growth services built for measurable results. From account management to analytics, we cover every aspect of your marketplace success.
+                Full-service advertising and management across Amazon, Noon, Trendyol, and Temu. Plus international expansion into USA, UK, and European markets.
               </p>
             </ScrollReveal>
           </div>

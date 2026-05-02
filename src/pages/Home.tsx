@@ -1,39 +1,39 @@
 import { Link } from 'react-router-dom';
 import {
   MessageCircle, ArrowRight, ShoppingCart, BarChart3, Search, Palette,
-  TrendingUp, Database, Star, CheckCircle2, Users, DollarSign, Award, Lightbulb
+  TrendingUp, Database, Star, CheckCircle2, Users, DollarSign, Award, Lightbulb, Globe
 } from 'lucide-react';
 import { WHATSAPP_URL } from '../lib/constants';
 import ScrollReveal from '../components/ScrollReveal';
 import SectionHeading from '../components/SectionHeading';
 
 const stats = [
-  { value: '100+', label: 'Brands Managed', icon: Users },
-  { value: '10M+', label: 'AED Revenue Generated', icon: DollarSign },
+  { value: '150+', label: 'Brands Managed', icon: Users },
+  { value: '$25M+', label: 'Ad Spend Managed', icon: DollarSign },
   { value: '95%', label: 'Client Retention', icon: Award },
-  { value: '3X', label: 'Growth in 90 Days', icon: TrendingUp },
+  { value: '5+', label: 'Marketplaces Covered', icon: TrendingUp },
 ];
 
 const services = [
-  { icon: ShoppingCart, title: 'Ecommerce Account Management', desc: 'Full-service store management across Amazon, Noon, and Shopify with daily optimization.' },
-  { icon: BarChart3, title: 'Amazon & Noon Ads', desc: 'Performance-driven ad campaigns that maximize ROAS and reduce ACOS systematically.' },
-  { icon: Search, title: 'Listing Optimization', desc: 'SEO-first titles, bullets, keywords, and backend search terms that rank and convert.' },
-  { icon: Palette, title: 'Creative & A+ Content', desc: 'Scroll-stopping infographics, product images, and enhanced brand content.' },
-  { icon: Lightbulb, title: 'Product Recommendation', desc: 'Identify winning products with market demand analysis, competitor benchmarking, and data insights.' },
-  { icon: TrendingUp, title: 'SEO Growth', desc: 'Organic ranking strategies that drive sustainable traffic and reduce ad dependency.' },
-  { icon: Database, title: 'Data Analytics', desc: 'Custom dashboards tracking ROAS, ACOS, conversion rates, and revenue trends.' },
+  { icon: ShoppingCart, title: 'Marketplace Account Management', desc: 'Full-service management across Amazon, Noon, Trendyol, and Temu with daily optimization and growth strategy.' },
+  { icon: BarChart3, title: 'Marketplace Advertising', desc: 'Performance-driven ad campaigns across Amazon, Noon, Trendyol, and Temu that maximize ROAS and scale revenue.' },
+  { icon: Globe, title: 'International Expansion', desc: 'Launch and scale your brand into USA, UK, and European markets with localized strategy and market entry planning.' },
+  { icon: Search, title: 'Listing Optimization', desc: 'SEO-first titles, bullets, keywords, and backend search terms optimized for each marketplace algorithm.' },
+  { icon: Palette, title: 'Creative & A+ Content', desc: 'Scroll-stopping infographics, product images, and enhanced brand content tailored to each platform.' },
+  { icon: Lightbulb, title: 'Product Recommendation', desc: 'Identify winning products with market demand analysis, competitor benchmarking, and cross-marketplace data insights.' },
+  { icon: Database, title: 'Data Analytics', desc: 'Custom dashboards tracking ROAS, ACOS, conversion rates, and revenue trends across all platforms.' },
 ];
 
 const caseStudies = [
-  { metric: '+120%', label: 'Sales Growth', desc: 'Fashion brand on Amazon UAE saw 120% increase in monthly sales within 90 days.', color: 'from-brand-500 to-brand-600' },
-  { metric: '18%', label: 'ACOS Achieved', desc: 'Reduced ACOS from 45% to 18% for a health & beauty brand on Amazon.', color: 'from-accent-500 to-accent-600' },
-  { metric: '3X', label: 'Revenue Growth', desc: 'Electronics brand tripled their monthly revenue through strategic ad management.', color: 'from-brand-500 to-accent-500' },
+  { metric: '+120%', label: 'Sales Growth', desc: 'Fashion brand achieved 120% sales growth after launching on Trendyol and expanding Amazon ads.', color: 'from-brand-500 to-brand-600' },
+  { metric: '18%', label: 'ACOS Achieved', desc: 'Reduced ACOS from 45% to 18% for a health & beauty brand across Amazon and Noon.', color: 'from-accent-500 to-accent-600' },
+  { metric: '5X', label: 'Revenue via Expansion', desc: 'Electronics brand grew 5X revenue by expanding from UAE to USA and UK Amazon marketplaces.', color: 'from-brand-500 to-accent-500' },
 ];
 
 const testimonials = [
-  { name: 'Ahmed K.', role: 'Fashion Brand Owner', text: 'Sales doubled in 2 months. The team really understands the Amazon UAE market and delivered results fast.' },
-  { name: 'Sara M.', role: 'Health & Beauty CEO', text: 'Highly professional team. They reduced our ad spend while increasing revenue. Couldn\'t ask for more.' },
-  { name: 'Omar R.', role: 'Electronics Store Owner', text: 'Best for Amazon growth. Their data-driven approach completely transformed our business.' },
+  { name: 'Ahmed K.', role: 'Fashion Brand Owner', text: 'Sales doubled in 2 months across Amazon and Noon. Their marketplace ads expertise is unmatched.' },
+  { name: 'Sara M.', role: 'Health & Beauty CEO', text: 'They launched us on Trendyol and Temu while optimizing our UAE ad spend. Revenue up 3X.' },
+  { name: 'Omar R.', role: 'Electronics Brand, UK', text: 'NextArc helped us expand from UAE to Amazon UK and USA. Their international strategy delivered 5X growth.' },
 ];
 
 export default function Home() {
@@ -50,18 +50,18 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center">
             <ScrollReveal>
               <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-brand-500/10 text-brand-400 border border-brand-500/20 mb-6">
-                Data-Driven Ecommerce Agency
+                Full-Service Ecommerce Ad Agency
               </span>
             </ScrollReveal>
             <ScrollReveal delay={100}>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] text-balance mb-6">
-                Scale Your Ecommerce Business with{' '}
-                <span className="gradient-text">Data-Driven Growth</span>
+                Scale Your Brand on{' '}
+                <span className="gradient-text">Every Marketplace, Globally</span>
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <p className="text-lg sm:text-xl text-dark-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-                We help brands grow on Amazon, Noon, and Shopify with smart strategy, performance marketing, and conversion optimization.
+                We manage and scale brands on Amazon, Noon, Trendyol, and Temu. Performance ads, marketplace optimization, and global expansion into USA, UK, and beyond.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={300}>
@@ -112,7 +112,7 @@ export default function Home() {
           <SectionHeading
             tag="What We Do"
             title="Services That Drive Revenue"
-            description="End-to-end ecommerce solutions built for measurable growth across all major marketplaces."
+            description="End-to-end marketplace advertising and management across Amazon, Noon, Trendyol, Temu, and international markets."
           />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, i) => (
@@ -202,10 +202,10 @@ export default function Home() {
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-500/10 rounded-full blur-3xl -translate-y-1/2" />
               <div className="relative">
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 text-balance">
-                  Ready to Grow Your Ecommerce Business?
+                  Ready to Dominate Marketplaces Globally?
                 </h2>
                 <p className="text-dark-300 text-lg max-w-xl mx-auto mb-8">
-                  Get a free strategy call with our growth experts. No commitment, just actionable insights.
+                  Get a free strategy call. Whether you want to scale ads, launch on new platforms, or expand into USA and UK - we've got you.
                 </p>
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-whatsapp text-lg px-8 py-4">
                   <MessageCircle className="w-5 h-5" />

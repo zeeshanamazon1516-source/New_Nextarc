@@ -1,20 +1,20 @@
-import { MessageCircle, ArrowRight, Target, BarChart3, ShieldCheck, TrendingUp, Users, Zap } from 'lucide-react';
+import { MessageCircle, ArrowRight, Target, BarChart3, ShieldCheck, TrendingUp, Users, Globe } from 'lucide-react';
 import { WHATSAPP_URL } from '../lib/constants';
 import ScrollReveal from '../components/ScrollReveal';
 import SectionHeading from '../components/SectionHeading';
 import { Link } from 'react-router-dom';
 
 const reasons = [
-  { icon: BarChart3, title: 'Data-Driven Decisions', desc: 'Every strategy is backed by real marketplace data, not guesswork. We track and optimize daily.' },
-  { icon: ShieldCheck, title: 'Full Account Management', desc: 'From listings to ads to customer service, we handle every aspect of your marketplace presence.' },
-  { icon: Target, title: 'Marketplace Expertise', desc: 'Deep knowledge of Amazon UAE, Noon, and Shopify ecosystems, algorithms, and best practices.' },
-  { icon: TrendingUp, title: 'Revenue Focused', desc: 'We measure success by your bottom line. Every action we take is tied to revenue growth.' },
+  { icon: BarChart3, title: 'Performance Advertising Experts', desc: 'Certified marketplace ads specialists managing $25M+ in annual ad spend across Amazon, Noon, Trendyol, and Temu.' },
+  { icon: ShieldCheck, title: 'Full Account Management', desc: 'From listings to ads to strategy, we handle every aspect of your marketplace presence across all platforms.' },
+  { icon: Globe, title: 'Global Marketplace Coverage', desc: 'Deep expertise in Amazon (USA, UK, UAE, KSA), Noon, Trendyol, and Temu. We know each algorithm inside out.' },
+  { icon: TrendingUp, title: 'International Expansion', desc: 'Proven track record of helping brands expand from local markets into USA, UK, and European marketplaces.' },
 ];
 
 const values = [
-  { icon: Zap, title: 'Speed', desc: 'We move fast and deliver results in weeks, not months.' },
-  { icon: Users, title: 'Partnership', desc: 'We treat your business as our own. Your success is our success.' },
-  { icon: Target, title: 'Precision', desc: 'No wasted spend. Every dirham is optimized for maximum return.' },
+  { icon: Globe, title: 'Global Mindset', desc: 'We think globally - helping brands go from one marketplace to dominating multiple regions.' },
+  { icon: Users, title: 'Partnership', desc: 'We treat your business as our own. Your revenue growth is our success metric.' },
+  { icon: Target, title: 'Precision', desc: 'No wasted ad spend. Every dollar is optimized across every marketplace for maximum return.' },
 ];
 
 export default function About() {
@@ -34,12 +34,12 @@ export default function About() {
             </ScrollReveal>
             <ScrollReveal delay={100}>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-6">
-                We Are a <span className="gradient-text">Performance-Driven</span> Ecommerce Agency
+                We Are a <span className="gradient-text">Global Ecommerce</span> Ad Agency
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <p className="text-lg text-dark-300 leading-relaxed max-w-2xl">
-                We help brands scale on Amazon, Noon, and Shopify using data, strategy, and relentless execution. Our team combines marketplace expertise with cutting-edge analytics to deliver measurable growth.
+                We manage and scale brands on Amazon, Noon, Trendyol, and Temu using performance advertising, data strategy, and international expansion expertise. From UAE to USA, UK, and beyond.
               </p>
             </ScrollReveal>
           </div>
@@ -54,20 +54,20 @@ export default function About() {
               <div className="glass-card p-8 lg:p-10">
                 <h2 className="text-2xl font-bold text-white mb-4">Our Mission</h2>
                 <p className="text-dark-300 leading-relaxed mb-6">
-                  Help brands grow faster with measurable results. We believe that every ecommerce brand deserves access to enterprise-level growth strategies, regardless of size.
+                  Help brands scale globally through marketplace advertising. We believe every ecommerce brand deserves enterprise-level ad management and market expansion support, regardless of size.
                 </p>
                 <p className="text-dark-300 leading-relaxed">
-                  We combine deep marketplace knowledge with performance marketing expertise to create sustainable growth engines for our partners.
+                  We combine deep expertise in Amazon, Noon, Trendyol, and Temu with proven international expansion frameworks to unlock growth in USA, UK, and new markets.
                 </p>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { val: '100+', label: 'Brands Served' },
-                  { val: '6+', label: 'Years Experience' },
+                  { val: '150+', label: 'Brands Managed' },
+                  { val: '5+', label: 'Marketplaces' },
                   { val: '95%', label: 'Retention Rate' },
-                  { val: '10M+', label: 'AED Generated' },
+                  { val: '$25M+', label: 'Ad Spend Managed' },
                 ].map((item) => (
                   <div key={item.label} className="glass-card p-6 text-center">
                     <div className="text-2xl font-extrabold text-white mb-1">{item.val}</div>
@@ -86,7 +86,7 @@ export default function About() {
           <SectionHeading
             tag="Why Us"
             title="Why Brands Choose NextArc"
-            description="We don't just manage accounts. We build growth systems that compound over time."
+            description="We don't just manage ads. We scale brands across marketplaces and into new international markets."
           />
           <div className="grid sm:grid-cols-2 gap-6">
             {reasons.map((reason, i) => (
