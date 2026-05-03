@@ -144,8 +144,8 @@ export default function Home() {
           <p className="text-center text-navy-400 text-sm font-medium mb-6">Trusted by brands on:</p>
           <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
             <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" className="h-7 opacity-80 hover:opacity-100 transition-opacity" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Noon_Website_Logo.svg" alt="Noon" className="h-8 opacity-80 hover:opacity-100 transition-opacity" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Trendyol_logo.svg" alt="Trendyol" className="h-7 opacity-80 hover:opacity-100 transition-opacity" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Noon_Website_Logo.svg" alt="Noon" className="h-8 opacity-80 hover:opacity-100 transition-opacity" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Trendyol_logo.svg" alt="Trendyol" className="h-7 opacity-80 hover:opacity-100 transition-opacity" />
             <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" alt="Shopify" className="h-7 opacity-80 hover:opacity-100 transition-opacity" />
           </div>
         </div>
