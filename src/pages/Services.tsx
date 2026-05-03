@@ -58,6 +58,12 @@ const services = [
     desc: 'Unified analytics dashboards tracking performance across all your marketplaces. One view for Amazon, Noon, and Trendyol metrics.',
     features: ['Cross-platform dashboards', 'ROAS & ACOS tracking by marketplace', 'Conversion analysis', 'Revenue attribution by channel', 'Trend forecasting', 'Monthly strategy reviews'],
   },
+  {
+    image: 'https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=200',
+    title: 'Social Media Management',
+    desc: 'Build brand presence and drive traffic to your marketplace listings through strategic social media marketing across Instagram, TikTok, Facebook, and LinkedIn.',
+    features: ['Content calendar & strategy', 'Instagram & TikTok Reels creation', 'Paid social ad campaigns', 'Community engagement & growth', 'Influencer collaboration outreach', 'Performance tracking & reporting'],
+  },
 ];
 
 export default function Services() {
