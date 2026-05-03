@@ -63,25 +63,21 @@ const posts = [
 export default function Blog() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-brand-100/30 rounded-full blur-3xl" />
-        </div>
+      <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden section-soft">
         <div className="container-max mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-3xl mx-auto text-center">
             <ScrollReveal>
-              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-brand-50 text-brand-600 border border-brand-100 mb-4">
+              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-teal-50 text-teal-700 border border-teal-100 mb-4">
                 Blog
               </span>
             </ScrollReveal>
             <ScrollReveal delay={100}>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-navy-900 leading-[1.1] mb-6">
                 Ecommerce <span className="gradient-text">Insights</span>
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={200}>
-              <p className="text-lg text-slate-500 leading-relaxed">
+              <p className="text-lg text-navy-500 leading-relaxed">
                 Expert guides, tips, and strategies to help you grow your ecommerce business in the UAE and beyond.
               </p>
             </ScrollReveal>
@@ -89,8 +85,7 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* Posts */}
-      <section className="section-padding bg-white">
+      <section className="section-padding section-light">
         <div className="container-max mx-auto">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {posts.map((post, i) => (
@@ -105,14 +100,14 @@ export default function Blog() {
                     />
                   </div>
                   <div className="p-6 flex flex-col flex-1">
-                    <span className="inline-block self-start px-3 py-1 rounded-full text-xs font-medium bg-brand-50 text-brand-600 mb-3">
+                    <span className="inline-block self-start px-3 py-1 rounded-full text-xs font-medium bg-teal-50 text-teal-700 mb-3">
                       {post.category}
                     </span>
-                    <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-brand-600 transition-colors">
+                    <h3 className="text-lg font-bold text-navy-800 mb-2 group-hover:text-teal-600 transition-colors">
                       {post.title}
                     </h3>
-                    <p className="text-slate-500 text-sm leading-relaxed flex-1 mb-4">{post.excerpt}</p>
-                    <div className="flex items-center justify-between text-slate-400 text-xs">
+                    <p className="text-navy-500 text-sm leading-relaxed flex-1 mb-4">{post.excerpt}</p>
+                    <div className="flex items-center justify-between text-navy-400 text-xs">
                       <span className="flex items-center gap-1">
                         <Calendar className="w-3.5 h-3.5" />
                         {post.date}

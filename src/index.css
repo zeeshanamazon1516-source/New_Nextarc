@@ -15,7 +15,7 @@
   body {
     font-family: 'Inter', system-ui, sans-serif;
     background-color: #ffffff;
-    color: #334155;
+    color: #334e68;
     line-height: 1.6;
     letter-spacing: -0.01em;
   }
@@ -23,8 +23,8 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
     line-height: 1.15;
-    letter-spacing: -0.025em;
-    color: #0f172a;
+    letter-spacing: -0.02em;
+    color: #102a43;
   }
 
   p {
@@ -35,11 +35,11 @@
 @layer components {
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white
-           bg-brand-600
-           hover:bg-brand-700
+           bg-teal-600
+           hover:bg-teal-700
            transition-all duration-200 ease-out
-           shadow-md shadow-brand-600/20
-           hover:shadow-lg hover:shadow-brand-600/30
+           shadow-md shadow-teal-600/20
+           hover:shadow-lg hover:shadow-teal-600/30
            hover:-translate-y-0.5
            active:translate-y-0;
     font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
@@ -47,11 +47,23 @@
 
   .btn-secondary {
     @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold
-           text-slate-700 border border-slate-200
+           text-navy-800 border border-navy-200
            bg-white
-           hover:bg-slate-50 hover:border-slate-300
+           hover:bg-navy-50 hover:border-navy-300
            transition-all duration-200 ease-out
            shadow-sm
+           hover:-translate-y-0.5
+           active:translate-y-0;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  .btn-orange {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white
+           bg-orange-500
+           hover:bg-orange-600
+           transition-all duration-200 ease-out
+           shadow-md shadow-orange-500/20
+           hover:shadow-lg hover:shadow-orange-500/30
            hover:-translate-y-0.5
            active:translate-y-0;
     font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
@@ -69,11 +81,24 @@
     font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   }
 
-  .card {
-    @apply bg-white border border-slate-100 rounded-2xl
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/60 rounded-2xl
            transition-all duration-300
-           shadow-card
-           hover:shadow-card-hover hover:border-slate-200;
+           shadow-glass;
+  }
+
+  .glass-card:hover {
+    @apply shadow-card-hover border-white/80 bg-white/80;
+  }
+
+  .card {
+    @apply bg-white border border-navy-100/60 rounded-2xl
+           transition-all duration-300
+           shadow-card;
+  }
+
+  .card:hover {
+    @apply shadow-card-hover border-navy-200/80;
   }
 
   .section-padding {
@@ -85,7 +110,23 @@
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-brand-600 to-brand-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-teal-600 to-teal-500 bg-clip-text text-transparent;
+  }
+
+  .gradient-text-orange {
+    @apply bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent;
+  }
+
+  .section-light {
+    @apply bg-white;
+  }
+
+  .section-soft {
+    @apply bg-gradient-to-br from-navy-50/50 via-white to-teal-50/30;
+  }
+
+  .section-accent {
+    @apply bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900;
   }
 }
 
@@ -100,19 +141,19 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f8fafc;
+  background: #f0f4f8;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #bcccdc;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #829ab1;
 }
 
 ::selection {
-  background: rgba(59, 130, 246, 0.15);
-  color: #1e293b;
+  background: rgba(39, 171, 131, 0.15);
+  color: #102a43;
 }

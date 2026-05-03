@@ -32,18 +32,18 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm'
+          ? 'bg-white/95 backdrop-blur-md border-b border-navy-100 shadow-sm'
           : 'bg-white/80 backdrop-blur-sm'
       }`}
     >
       <div className="container-max mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-18">
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-lg bg-brand-600 flex items-center justify-center transition-transform group-hover:scale-110">
+        <div className="flex items-center justify-between h-16 lg:h-[72px]">
+          <Link to="/" className="flex items-center gap-2.5 group">
+            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center transition-transform group-hover:scale-110 shadow-sm">
               <TrendingUp className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-slate-800" style={{ fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif' }}>
-              Next<span className="text-brand-600">Arc</span>
+            <span className="text-xl font-bold text-navy-900" style={{ fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif' }}>
+              Next<span className="text-teal-600">Arc</span>
             </span>
           </Link>
 
@@ -52,10 +52,10 @@ export default function Header() {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
                   location.pathname === link.to
-                    ? 'text-brand-600 bg-brand-50'
-                    : 'text-slate-600 hover:text-brand-600 hover:bg-slate-50'
+                    ? 'text-teal-700 bg-teal-50'
+                    : 'text-navy-600 hover:text-teal-700 hover:bg-teal-50/50'
                 }`}
               >
                 {link.label}
@@ -72,7 +72,7 @@ export default function Header() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+            className="lg:hidden p-2 rounded-lg text-navy-600 hover:text-navy-900 hover:bg-navy-50 transition-colors"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -81,7 +81,7 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-100 shadow-lg">
+        <div className="lg:hidden bg-white border-b border-navy-100 shadow-lg">
           <nav className="container-max mx-auto px-4 py-4 flex flex-col gap-1">
             {navLinks.map((link) => (
               <Link
@@ -89,8 +89,8 @@ export default function Header() {
                 to={link.to}
                 className={`px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
                   location.pathname === link.to
-                    ? 'text-brand-600 bg-brand-50'
-                    : 'text-slate-600 hover:text-brand-600 hover:bg-slate-50'
+                    ? 'text-teal-700 bg-teal-50'
+                    : 'text-navy-600 hover:text-teal-700 hover:bg-teal-50/50'
                 }`}
               >
                 {link.label}

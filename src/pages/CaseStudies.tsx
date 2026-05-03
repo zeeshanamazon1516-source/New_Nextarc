@@ -14,8 +14,7 @@ const cases = [
       { metric: '+85%', label: 'Organic Traffic', icon: ArrowUp },
       { metric: '90 Days', label: 'Time to Results', icon: Target },
     ],
-    accent: 'border-brand-200',
-    accentBg: 'bg-brand-50',
+    accent: 'border-l-teal-400',
   },
   {
     title: 'Health Brand ACOS from 45% to 18% on Amazon & Temu',
@@ -28,8 +27,7 @@ const cases = [
       { metric: '2.5X', label: 'ROAS Improvement', icon: TrendingUp },
       { metric: '60 Days', label: 'Time to Results', icon: Target },
     ],
-    accent: 'border-emerald-200',
-    accentBg: 'bg-emerald-50',
+    accent: 'border-l-orange-400',
   },
   {
     title: '5X Growth via USA & UK Expansion',
@@ -42,8 +40,7 @@ const cases = [
       { metric: '+300%', label: 'Ad Revenue', icon: TrendingUp },
       { metric: '120 Days', label: 'Time to Results', icon: Target },
     ],
-    accent: 'border-blue-200',
-    accentBg: 'bg-blue-50',
+    accent: 'border-l-teal-500',
   },
   {
     title: 'Trendyol Launch Generates $200K in 60 Days',
@@ -56,33 +53,28 @@ const cases = [
       { metric: '22%', label: 'ACOS Achieved', icon: ArrowDown },
       { metric: '60 Days', label: 'Time to Results', icon: Target },
     ],
-    accent: 'border-amber-200',
-    accentBg: 'bg-amber-50',
+    accent: 'border-l-orange-500',
   },
 ];
 
 export default function CaseStudies() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/3 right-1/3 w-80 h-80 bg-brand-100/30 rounded-full blur-3xl" />
-        </div>
+      <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden section-soft">
         <div className="container-max mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-3xl mx-auto text-center">
             <ScrollReveal>
-              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-brand-50 text-brand-600 border border-brand-100 mb-4">
+              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-teal-50 text-teal-700 border border-teal-100 mb-4">
                 Case Studies
               </span>
             </ScrollReveal>
             <ScrollReveal delay={100}>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-navy-900 leading-[1.1] mb-6">
                 Proven <span className="gradient-text">Results</span> That Speak
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={200}>
-              <p className="text-lg text-slate-500 leading-relaxed">
+              <p className="text-lg text-navy-500 leading-relaxed">
                 Real brands, real numbers, real growth. See how we've helped businesses like yours achieve breakthrough results.
               </p>
             </ScrollReveal>
@@ -90,35 +82,34 @@ export default function CaseStudies() {
         </div>
       </section>
 
-      {/* Cases */}
-      <section className="section-padding bg-white">
+      <section className="section-padding section-light">
         <div className="container-max mx-auto space-y-8">
           {cases.map((cs, i) => (
             <ScrollReveal key={cs.title} delay={i * 100}>
               <div className={`card overflow-hidden border-l-4 ${cs.accent}`}>
                 <div className="p-6 sm:p-8 lg:p-10">
-                  <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${cs.accentBg} text-slate-600 mb-4`}>
+                  <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-navy-50 text-navy-600 mb-4">
                     {cs.category}
                   </span>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-6">{cs.title}</h3>
+                  <h3 className="text-2xl font-bold text-navy-900 mb-6">{cs.title}</h3>
 
                   <div className="grid lg:grid-cols-2 gap-8 mb-8">
                     <div>
-                      <h4 className="text-sm font-semibold text-brand-600 uppercase tracking-wider mb-2">Challenge</h4>
-                      <p className="text-slate-500 text-sm leading-relaxed">{cs.challenge}</p>
+                      <h4 className="text-sm font-semibold text-teal-700 uppercase tracking-wider mb-2">Challenge</h4>
+                      <p className="text-navy-500 text-sm leading-relaxed">{cs.challenge}</p>
                     </div>
                     <div>
-                      <h4 className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-2">Solution</h4>
-                      <p className="text-slate-500 text-sm leading-relaxed">{cs.solution}</p>
+                      <h4 className="text-sm font-semibold text-orange-600 uppercase tracking-wider mb-2">Solution</h4>
+                      <p className="text-navy-500 text-sm leading-relaxed">{cs.solution}</p>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                     {cs.results.map((r) => (
-                      <div key={r.label} className="bg-slate-50 rounded-xl p-4 text-center">
-                        <r.icon className="w-5 h-5 text-brand-500 mx-auto mb-2" />
-                        <div className="text-xl font-bold text-slate-800">{r.metric}</div>
-                        <div className="text-slate-400 text-xs mt-1">{r.label}</div>
+                      <div key={r.label} className="bg-navy-50/50 rounded-xl p-4 text-center">
+                        <r.icon className="w-5 h-5 text-teal-500 mx-auto mb-2" />
+                        <div className="text-xl font-bold text-navy-800">{r.metric}</div>
+                        <div className="text-navy-400 text-xs mt-1">{r.label}</div>
                       </div>
                     ))}
                   </div>
@@ -129,18 +120,17 @@ export default function CaseStudies() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-slate-50">
+      <section className="section-padding section-soft">
         <div className="container-max mx-auto">
           <ScrollReveal>
-            <div className="bg-gradient-to-br from-brand-600 to-brand-700 rounded-3xl p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+            <div className="bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 rounded-3xl p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-teal-500/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
               <div className="relative">
                 <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Want Similar Results?</h2>
-                <p className="text-blue-100 text-lg max-w-xl mx-auto mb-8">
+                <p className="text-navy-300 text-lg max-w-xl mx-auto mb-8">
                   Let's create the next success story together. Book a free strategy call today.
                 </p>
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-white bg-emerald-500 hover:bg-emerald-600 transition-all shadow-lg text-lg" style={{ fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif' }}>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-whatsapp text-lg px-8 py-4">
                   <MessageCircle className="w-5 h-5" />
                   Get Similar Results
                 </a>
