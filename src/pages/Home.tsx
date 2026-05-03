@@ -1,9 +1,9 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  MessageCircle, ArrowRight, ShoppingCart, BarChart3, Search, Palette,
+  MessageCircle, ArrowRight,
   TrendingUp, Database, Globe,
-  ChevronLeft, ChevronRight, Package, PieChart, Target, RotateCcw
+  ChevronLeft, ChevronRight, Target
 } from 'lucide-react';
 import { WHATSAPP_URL } from '../lib/constants';
 import ScrollReveal from '../components/ScrollReveal';
@@ -33,13 +33,13 @@ const banners = [
 ];
 
 const services = [
-  { icon: ShoppingCart, title: 'Account Management', desc: 'Full-service marketplace management across Amazon, Noon, and Trendyol.' },
-  { icon: Search, title: 'Listing Optimization', desc: 'SEO-first titles, bullets, and keywords optimized for each marketplace algorithm.' },
-  { icon: BarChart3, title: 'PPC Advertising', desc: 'Performance-driven ad campaigns that maximize ROAS across all platforms.' },
-  { icon: RotateCcw, title: 'Return & Reimbursement Management', desc: 'We recover lost revenue from returned items by filing and tracking reimbursement claims on your behalf.' },
-  { icon: Package, title: 'Inventory Planning', desc: 'Smart inventory management to maintain stock levels and avoid lost sales.' },
-  { icon: PieChart, title: 'Reporting & Analytics', desc: 'Custom dashboards tracking sales, ads, conversion rates, and revenue trends.' },
-  { icon: Palette, title: 'A+ Content & Brand Store', desc: 'Premium visual content that drives clicks and builds brand authority.' },
+  { image: 'https://images.pexels.com/photos/7681091/pexels-photo-7681091.jpeg?auto=compress&cs=tinysrgb&w=200', title: 'Account Management', desc: 'Full-service marketplace management across Amazon, Noon, and Trendyol.' },
+  { image: 'https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=200', title: 'Listing Optimization', desc: 'SEO-first titles, bullets, and keywords optimized for each marketplace algorithm.' },
+  { image: 'https://images.pexels.com/photos/6476589/pexels-photo-6476589.jpeg?auto=compress&cs=tinysrgb&w=200', title: 'PPC Advertising', desc: 'Performance-driven ad campaigns that maximize ROAS across all platforms.' },
+  { image: 'https://images.pexels.com/photos/4391470/pexels-photo-4391470.jpeg?auto=compress&cs=tinysrgb&w=200', title: 'Return & Reimbursement Management', desc: 'We recover lost revenue from returned items by filing and tracking reimbursement claims on your behalf.' },
+  { image: 'https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&w=200', title: 'Inventory Planning', desc: 'Smart inventory management to maintain stock levels and avoid lost sales.' },
+  { image: 'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=200', title: 'Reporting & Analytics', desc: 'Custom dashboards tracking sales, ads, conversion rates, and revenue trends.' },
+  { image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=200', title: 'A+ Content & Brand Store', desc: 'Premium visual content that drives clicks and builds brand authority.' },
 ];
 
 const whyUs = [
@@ -164,8 +164,8 @@ export default function Home() {
             {services.map((service, i) => (
               <ScrollReveal key={service.title} delay={i * 80}>
                 <div className="card p-6 lg:p-8 h-full group">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-50 to-teal-100 border border-teal-200/50 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                    <service.icon className="w-6 h-6 text-teal-600" />
+                  <div className="w-14 h-14 rounded-xl overflow-hidden mb-5 group-hover:scale-110 transition-transform shadow-sm">
+                    <img src={service.image} alt={service.title} className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <h3 className="text-lg font-bold text-navy-800 mb-2">{service.title}</h3>
                   <p className="text-navy-500 text-sm leading-relaxed">{service.desc}</p>
