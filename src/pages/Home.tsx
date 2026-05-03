@@ -75,73 +75,65 @@ export default function Home() {
     <>
       {/* Hero Banner Carousel */}
       <section className="relative pt-16 lg:pt-[72px]">
-        <div className="relative w-full h-[220px] sm:h-[320px] md:h-[400px] lg:h-[480px] xl:h-[520px] overflow-hidden bg-navy-900">
-          {banners.map((banner, i) => (
-            <div
-              key={banner.image}
-              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-                i === current ? 'opacity-100 z-10' : 'opacity-0 z-0'
-              }`}
-            >
-              <img
-                src={banner.image}
-                alt={banner.headline}
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-          ))}
-
-          {/* Arrows */}
-          <button
-            onClick={prev}
-            className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 backdrop-blur-sm border border-white/60 flex items-center justify-center text-navy-700 hover:bg-white transition-all shadow-lg"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-          <button
-            onClick={next}
-            className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 backdrop-blur-sm border border-white/60 flex items-center justify-center text-navy-700 hover:bg-white transition-all shadow-lg"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
-
-          {/* Dot Indicators */}
-          <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2.5">
-            {banners.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrent(i)}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
-                  i === current ? 'w-8 bg-orange-500 shadow-lg' : 'w-2.5 bg-white/70 hover:bg-white'
+        <div className="relative w-full overflow-hidden bg-white">
+          <div className="relative w-full" style={{ aspectRatio: '16 / 6' }}>
+            {banners.map((banner, i) => (
+              <div
+                key={banner.image}
+                className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                  i === current ? 'opacity-100 z-10' : 'opacity-0 z-0'
                 }`}
-              />
+              >
+                <img
+                  src={banner.image}
+                  alt={banner.headline}
+                  className="w-full h-full object-contain"
+                />
+              </div>
             ))}
+
+            {/* Arrows */}
+            <button
+              onClick={prev}
+              className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 backdrop-blur-sm border border-navy-200 flex items-center justify-center text-navy-700 hover:bg-white transition-all shadow-lg"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={next}
+              className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 backdrop-blur-sm border border-navy-200 flex items-center justify-center text-navy-700 hover:bg-white transition-all shadow-lg"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+
+            {/* Dot Indicators */}
+            <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2.5">
+              {banners.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  className={`h-2.5 rounded-full transition-all duration-300 ${
+                    i === current ? 'w-8 bg-orange-500 shadow-lg' : 'w-2.5 bg-navy-300 hover:bg-navy-400'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Hero Text Section */}
-      <section className="section-padding section-soft">
+      {/* CTA Below Banner */}
+      <section className="py-8 sm:py-10 bg-white border-b border-navy-100">
         <div className="container-max mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <ScrollReveal>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-navy-900 leading-[1.1] mb-5" style={{ fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif' }}>
-                {banners[current].headline}
-              </h1>
-            </ScrollReveal>
-            <p className="text-base sm:text-lg md:text-xl text-navy-500 leading-relaxed mb-8 max-w-2xl mx-auto">
-              {banners[current].subheadline}
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-whatsapp text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto">
-                <MessageCircle className="w-5 h-5" />
-                Get Free Consultation
-              </a>
-              <Link to="/case-studies" className="btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto">
-                See Results
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-whatsapp text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto">
+              <MessageCircle className="w-5 h-5" />
+              Get Free Consultation
+            </a>
+            <Link to="/case-studies" className="btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto">
+              See Results
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </section>
