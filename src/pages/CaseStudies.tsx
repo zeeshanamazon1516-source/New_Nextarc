@@ -62,7 +62,7 @@ const cases = [
   {
     title: 'Supplements Brand Conquers Amazon USA',
     category: 'Amazon USA',
-    image: 'https://images.pexels.com/photos/161688/medicine-pills-container-pill-161688.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/3683098/pexels-photo-3683098.jpeg?auto=compress&cs=tinysrgb&w=600',
     challenge: 'A supplements brand based in Dubai wanted to tap into the massive US market but faced challenges with FDA compliance, competitive keywords, and high CPCs on Amazon USA.',
     solution: 'We managed compliance documentation, built keyword-rich listings optimized for US search behavior, and launched a phased PPC strategy starting with long-tail keywords before scaling to competitive terms.',
     results: [
