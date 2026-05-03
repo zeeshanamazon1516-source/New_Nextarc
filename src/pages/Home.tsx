@@ -67,7 +67,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(next, 2500);
+    const interval = setInterval(next, 10000);
     return () => clearInterval(interval);
   }, [next]);
 
