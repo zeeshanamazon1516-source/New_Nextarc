@@ -22,7 +22,7 @@ const plans = [
     icon: Flame,
     desc: 'Best for brands scaling across multiple marketplaces with aggressive ad strategies.',
     features: [
-      'Full Ads Management (Amazon, Noon, Trendyol, or Temu)',
+      'Full Ads Management (Amazon, Noon, or Trendyol)',
       'Multi-marketplace listing optimization',
       'Weekly performance reports',
       'Keyword research & rank tracking',
@@ -127,7 +127,7 @@ export default function Pricing() {
             {[
               { q: 'How long until I see results?', a: 'Most clients see measurable improvements within 30-60 days, with significant growth by 90 days.' },
               { q: 'Do you require long-term contracts?', a: 'No. We offer flexible month-to-month agreements. Our 95% retention rate speaks for itself.' },
-              { q: 'Which platforms do you support?', a: 'We manage Amazon (USA, UK, UAE, KSA), Noon, Trendyol, and Temu. Multi-platform and international expansion are available on Growth and Pro plans.' },
+              { q: 'Which platforms do you support?', a: 'We manage Amazon (USA, UK, UAE, KSA), Noon, and Trendyol. Multi-platform and international expansion are available on Growth and Pro plans.' },
               { q: 'Can I switch plans later?', a: 'Absolutely. You can upgrade or adjust your plan anytime as your business grows.' },
             ].map((faq) => (
               <ScrollReveal key={faq.q}>

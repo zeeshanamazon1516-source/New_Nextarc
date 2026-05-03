@@ -7,13 +7,13 @@ const services = [
   {
     icon: BarChart3,
     title: 'Marketplace Advertising (PPC & Sponsored Ads)',
-    desc: 'Performance-driven ad campaigns across Amazon, Noon, Trendyol, and Temu. We manage your entire ad strategy to maximize ROAS and scale profitably.',
-    features: ['Amazon Sponsored Products & Brands & Display', 'Noon Ads campaign management', 'Trendyol promoted listings & ads', 'Temu advertising optimization', 'ACOS reduction & bid automation', 'Weekly performance reports & scaling'],
+    desc: 'Performance-driven ad campaigns across Amazon, Noon, and Trendyol. We manage your entire ad strategy to maximize ROAS and scale profitably.',
+    features: ['Amazon Sponsored Products & Brands & Display', 'Noon Ads campaign management', 'Trendyol promoted listings & ads', 'Amazon USA & UK PPC strategy', 'ACOS reduction & bid automation', 'Weekly performance reports & scaling'],
   },
   {
     icon: ShoppingCart,
     title: 'Marketplace Account Management',
-    desc: 'Full-service account management across Amazon, Noon, Trendyol, and Temu. From daily operations to growth strategy, we handle everything.',
+    desc: 'Full-service account management across Amazon, Noon, and Trendyol. From daily operations to growth strategy, we handle everything.',
     features: ['Multi-marketplace daily monitoring', 'Inventory & pricing strategy', 'Catalog management & compliance', 'Performance reporting', 'Competitor analysis', 'Account health maintenance'],
   },
   {
@@ -25,7 +25,7 @@ const services = [
   {
     icon: Search,
     title: 'Listing Optimization',
-    desc: 'SEO-first approach to product listings optimized for each marketplace algorithm - Amazon A9, Noon, Trendyol, and Temu search ranking.',
+    desc: 'SEO-first approach to product listings optimized for each marketplace algorithm - Amazon A9, Noon, and Trendyol search ranking.',
     features: ['Platform-specific SEO optimization', 'Bullet point & description copywriting', 'Backend keyword research', 'Search term & attribute optimization', 'Category & browse node setup', 'A/B testing & conversion optimization'],
   },
   {
@@ -49,7 +49,7 @@ const services = [
   {
     icon: Database,
     title: 'Data Analytics & Cross-Platform Reporting',
-    desc: 'Unified analytics dashboards tracking performance across all your marketplaces. One view for Amazon, Noon, Trendyol, and Temu metrics.',
+    desc: 'Unified analytics dashboards tracking performance across all your marketplaces. One view for Amazon, Noon, and Trendyol metrics.',
     features: ['Cross-platform dashboards', 'ROAS & ACOS tracking by marketplace', 'Conversion analysis', 'Revenue attribution by channel', 'Trend forecasting', 'Monthly strategy reviews'],
   },
 ];
@@ -73,7 +73,7 @@ export default function Services() {
               </ScrollReveal>
               <ScrollReveal delay={200}>
                 <p className="text-lg text-navy-500 leading-relaxed">
-                  Full-service advertising and management across Amazon, Noon, Trendyol, and Temu. Plus international expansion into USA, UK, and European markets.
+                  Full-service advertising and management across Amazon, Noon, and Trendyol. Plus international expansion into USA, UK, and European markets.
                 </p>
               </ScrollReveal>
             </div>

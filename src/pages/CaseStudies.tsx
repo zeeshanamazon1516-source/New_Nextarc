@@ -5,10 +5,10 @@ import ScrollReveal from '../components/ScrollReveal';
 const cases = [
   {
     title: 'Fashion Brand Scales to 3 Marketplaces',
-    category: 'Amazon + Noon + Trendyol',
+    category: 'Amazon + Noon + Noon KSA',
     image: 'https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&w=600',
-    challenge: 'A UAE-based fashion brand was only selling on Amazon UAE with stagnant sales. They wanted to expand but had no strategy for Trendyol or multi-marketplace advertising.',
-    solution: 'We optimized their Amazon UAE ads, launched them on Noon with full catalog setup, and expanded to Trendyol with localized listings and promoted ads strategy.',
+    challenge: 'A UAE-based fashion brand was only selling on Amazon UAE with stagnant sales. They wanted to expand regionally but lacked a multi-marketplace advertising strategy.',
+    solution: 'We optimized their Amazon UAE ads, launched them on Noon UAE and Noon KSA with full catalog setup, and implemented cross-marketplace ad strategies for maximum visibility.',
     results: [
       { metric: '+120%', label: 'Total Sales Growth', icon: TrendingUp },
       { metric: '3', label: 'Marketplaces Active', icon: Globe },
@@ -18,11 +18,11 @@ const cases = [
     accent: 'border-l-teal-400',
   },
   {
-    title: 'Health Brand ACOS from 45% to 18% on Amazon & Temu',
-    category: 'Amazon UAE + Temu',
+    title: 'Health Brand ACOS from 45% to 18% on Amazon',
+    category: 'Amazon UAE + Amazon USA',
     image: 'https://images.pexels.com/photos/3735149/pexels-photo-3735149.jpeg?auto=compress&cs=tinysrgb&w=600',
-    challenge: 'A health and beauty brand was overspending on Amazon ads (45% ACOS) and wanted to diversify to Temu but didn\'t know how to structure ads on both platforms.',
-    solution: 'We restructured Amazon campaigns, implemented aggressive negative keywords, and simultaneously launched their top sellers on Temu with optimized promotional strategy.',
+    challenge: 'A health and beauty brand was overspending on Amazon ads (45% ACOS) in UAE and wanted to expand to the US market while improving ad efficiency across both regions.',
+    solution: 'We restructured Amazon UAE campaigns, implemented aggressive negative keywords, and simultaneously launched their top sellers on Amazon USA with optimized PPC strategy tailored to the US audience.',
     results: [
       { metric: '18%', label: 'Amazon ACOS', icon: Target },
       { metric: '+60%', label: 'Revenue Growth', icon: DollarSign },
@@ -33,7 +33,7 @@ const cases = [
   },
   {
     title: '5X Growth via USA & UK Expansion',
-    category: 'International Expansion',
+    category: 'Amazon USA + Amazon UK',
     image: 'https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=600',
     challenge: 'An electronics brand was doing well in UAE but had plateaued. They wanted to enter the US and UK markets but lacked the knowledge of FBA logistics, compliance, and local ad strategy.',
     solution: 'We handled full market entry for Amazon USA and UK - from FBA setup and localized listings to launch advertising campaigns. Simultaneously maintained their UAE marketplace presence.',
@@ -46,11 +46,11 @@ const cases = [
     accent: 'border-l-teal-500',
   },
   {
-    title: 'Trendyol Launch Generates $200K in 60 Days',
-    category: 'Trendyol',
+    title: 'UK Launch Generates $200K in 60 Days',
+    category: 'Amazon UK',
     image: 'https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg?auto=compress&cs=tinysrgb&w=600',
-    challenge: 'A home & lifestyle brand wanted to enter the Turkish market via Trendyol but had zero presence, no local knowledge, and needed end-to-end marketplace setup.',
-    solution: 'We handled full Trendyol onboarding, localized 50+ product listings, set up promoted listings strategy, and managed pricing to be competitive in the Turkish market.',
+    challenge: 'A home & lifestyle brand wanted to enter the UK market via Amazon but had zero presence, no local knowledge, and needed end-to-end marketplace setup and compliance.',
+    solution: 'We handled full Amazon UK onboarding, localized 50+ product listings for the British market, set up Sponsored Products and Brands campaigns, and managed pricing to be competitive.',
     results: [
       { metric: '$200K', label: 'Revenue in 60 Days', icon: DollarSign },
       { metric: '50+', label: 'Products Launched', icon: ArrowUp },
@@ -58,6 +58,20 @@ const cases = [
       { metric: '60 Days', label: 'Time to Results', icon: Target },
     ],
     accent: 'border-l-orange-500',
+  },
+  {
+    title: 'Supplements Brand Conquers Amazon USA',
+    category: 'Amazon USA',
+    image: 'https://images.pexels.com/photos/3683074/pexels-photo-3683074.jpeg?auto=compress&cs=tinysrgb&w=600',
+    challenge: 'A supplements brand based in Dubai wanted to tap into the massive US market but faced challenges with FDA compliance, competitive keywords, and high CPCs on Amazon USA.',
+    solution: 'We managed compliance documentation, built keyword-rich listings optimized for US search behavior, and launched a phased PPC strategy starting with long-tail keywords before scaling to competitive terms.',
+    results: [
+      { metric: '$350K', label: 'Monthly Revenue', icon: DollarSign },
+      { metric: '15%', label: 'ACOS Maintained', icon: Target },
+      { metric: '+200%', label: 'Organic Rank Growth', icon: ArrowUp },
+      { metric: '90 Days', label: 'Time to Results', icon: Target },
+    ],
+    accent: 'border-l-teal-400',
   },
 ];
 

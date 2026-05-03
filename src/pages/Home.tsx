@@ -28,12 +28,12 @@ const banners = [
   {
     image: '/invenrtory.png',
     headline: 'Smart Inventory. Zero Lost Sales.',
-    subheadline: 'Predictive inventory management across Amazon, Noon, Trendyol, and Temu.',
+    subheadline: 'Predictive inventory management across Amazon, Noon, and Trendyol.',
   },
 ];
 
 const services = [
-  { icon: ShoppingCart, title: 'Account Management', desc: 'Full-service marketplace management across Amazon, Noon, Trendyol, and Temu.' },
+  { icon: ShoppingCart, title: 'Account Management', desc: 'Full-service marketplace management across Amazon, Noon, and Trendyol.' },
   { icon: Search, title: 'Listing Optimization', desc: 'SEO-first titles, bullets, and keywords optimized for each marketplace algorithm.' },
   { icon: BarChart3, title: 'PPC Advertising', desc: 'Performance-driven ad campaigns that maximize ROAS across all platforms.' },
   { icon: Package, title: 'Inventory Planning', desc: 'Smart inventory management to maintain stock levels and avoid lost sales.' },
@@ -42,7 +42,7 @@ const services = [
 ];
 
 const whyUs = [
-  { icon: Target, title: 'Marketplace Expertise', desc: 'Deep knowledge of Amazon, Noon, Trendyol & Temu algorithms and best practices.' },
+  { icon: Target, title: 'Marketplace Expertise', desc: 'Deep knowledge of Amazon, Noon & Trendyol algorithms and best practices.' },
   { icon: Database, title: 'Data-Driven Strategy', desc: 'Every decision backed by real marketplace data, not guesswork.' },
   { icon: TrendingUp, title: 'Conversion Focused', desc: 'We optimize for sales, not vanity metrics. Every action ties to revenue.' },
   { icon: Globe, title: 'UAE & GCC Experience', desc: '25+ brands managed in UAE, KSA, and international markets.' },
@@ -146,7 +146,7 @@ export default function Home() {
             <span className="text-navy-700 font-semibold">Amazon</span>
             <span className="text-navy-700 font-semibold">Noon</span>
             <span className="text-navy-700 font-semibold">Trendyol</span>
-            <span className="text-navy-700 font-semibold">Temu</span>
+            <span className="text-navy-700 font-semibold">Amazon USA</span>
             <span className="text-navy-700 font-semibold">Shopify</span>
           </div>
         </div>
@@ -238,7 +238,7 @@ export default function Home() {
           <div className="grid sm:grid-cols-3 gap-6">
             {[
               { name: 'Ahmed K.', role: 'Fashion Brand Owner', text: 'Sales doubled across Amazon and Noon. Their marketplace ads expertise is unmatched.' },
-              { name: 'Sara M.', role: 'Health & Beauty CEO', text: 'They launched us on Trendyol and Temu while optimizing our UAE ad spend. Revenue up 3X.' },
+              { name: 'Sara M.', role: 'Health & Beauty CEO', text: 'They launched us on Amazon USA and UK while optimizing our UAE ad spend. Revenue up 3X.' },
               { name: 'Omar R.', role: 'Electronics Brand, UK', text: 'NextArc helped us expand from UAE to Amazon UK and USA. Their international strategy delivered 5X growth.' },
             ].map((t, i) => (
               <ScrollReveal key={t.name} delay={i * 100}>

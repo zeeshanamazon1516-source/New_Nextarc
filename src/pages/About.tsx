@@ -5,9 +5,9 @@ import SectionHeading from '../components/SectionHeading';
 import { Link } from 'react-router-dom';
 
 const reasons = [
-  { icon: BarChart3, title: 'Performance Advertising Experts', desc: 'Certified marketplace ads specialists managing $25M+ in annual ad spend across Amazon, Noon, Trendyol, and Temu.' },
+  { icon: BarChart3, title: 'Performance Advertising Experts', desc: 'Certified marketplace ads specialists managing $25M+ in annual ad spend across Amazon, Noon, and Trendyol.' },
   { icon: ShieldCheck, title: 'Full Account Management', desc: 'From listings to ads to strategy, we handle every aspect of your marketplace presence across all platforms.' },
-  { icon: Globe, title: 'Global Marketplace Coverage', desc: 'Deep expertise in Amazon (USA, UK, UAE, KSA), Noon, Trendyol, and Temu. We know each algorithm inside out.' },
+  { icon: Globe, title: 'Global Marketplace Coverage', desc: 'Deep expertise in Amazon (USA, UK, UAE, KSA), Noon, and Trendyol. We know each algorithm inside out.' },
   { icon: TrendingUp, title: 'International Expansion', desc: 'Proven track record of helping brands expand from local markets into USA, UK, and European marketplaces.' },
 ];
 
@@ -36,7 +36,7 @@ export default function About() {
               </ScrollReveal>
               <ScrollReveal delay={200}>
                 <p className="text-lg text-navy-500 leading-relaxed">
-                  We manage and scale brands on Amazon, Noon, Trendyol, and Temu using performance advertising, data strategy, and international expansion expertise. From UAE to USA, UK, and beyond.
+                  We manage and scale brands on Amazon, Noon, and Trendyol using performance advertising, data strategy, and international expansion expertise. From UAE to USA, UK, and beyond.
                 </p>
               </ScrollReveal>
             </div>
@@ -64,7 +64,7 @@ export default function About() {
                   Help brands scale globally through marketplace advertising. We believe every ecommerce brand deserves enterprise-level ad management and market expansion support, regardless of size.
                 </p>
                 <p className="text-navy-500 leading-relaxed">
-                  We combine deep expertise in Amazon, Noon, Trendyol, and Temu with proven international expansion frameworks to unlock growth in USA, UK, and new markets.
+                  We combine deep expertise in Amazon, Noon, and Trendyol with proven international expansion frameworks to unlock growth in USA, UK, and new markets.
                 </p>
               </div>
             </ScrollReveal>

@@ -9,12 +9,12 @@ import ScrollReveal from '../components/ScrollReveal';
 const problems = [
   { icon: AlertTriangle, text: 'Low sales and stagnant revenue across marketplaces' },
   { icon: TrendingUp, text: 'High ACOS eating into your margins on ads' },
-  { icon: Search, text: 'Poor visibility on Amazon, Noon, Trendyol, or Temu' },
+  { icon: Search, text: 'Poor visibility on Amazon, Noon, or Trendyol' },
   { icon: Target, text: 'No clear strategy for international expansion' },
 ];
 
 const solutions = [
-  { title: 'Marketplace Advertising', desc: 'Performance ads across Amazon, Noon, Trendyol, and Temu that maximize ROAS.' },
+  { title: 'Marketplace Advertising', desc: 'Performance ads across Amazon, Noon, and Trendyol that maximize ROAS.' },
   { title: 'Global Expansion', desc: 'Launch your brand in USA, UK, and Europe with localized strategy and ads.' },
   { title: 'Data-Driven Optimization', desc: 'Cross-platform analytics that reveal exactly where your growth opportunities are.' },
 ];
@@ -27,7 +27,7 @@ const results = [
 
 const testimonials = [
   { name: 'Ahmed K.', text: 'Sales doubled across Amazon and Noon. They also launched us on Trendyol seamlessly.' },
-  { name: 'Sara M.', text: 'Expanded to UK Amazon and Temu with their help. Revenue up 5X in 6 months.' },
+  { name: 'Sara M.', text: 'Expanded to Amazon UK and USA with their help. Revenue up 5X in 6 months.' },
 ];
 
 const servicesShort = [
@@ -75,7 +75,7 @@ export default function Landing() {
             </ScrollReveal>
             <ScrollReveal delay={100}>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-navy-900 leading-[1.1] text-balance mb-6">
-                Scale on Amazon, Noon, Trendyol & Temu in{' '}
+                Scale on Amazon, Noon & Trendyol in{' '}
                 <span className="gradient-text">90 Days</span>
               </h1>
             </ScrollReveal>

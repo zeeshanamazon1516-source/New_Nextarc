@@ -17,7 +17,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-navy-300 text-sm leading-relaxed mb-6">
-              Full-service ecommerce ad agency managing brands on Amazon, Noon, Trendyol, and Temu. Helping businesses expand globally into USA, UK, and beyond.
+              Full-service ecommerce ad agency managing brands on Amazon, Noon, and Trendyol. Helping businesses expand globally into USA, UK, and beyond.
             </p>
             <a
               href={WHATSAPP_URL}
@@ -33,7 +33,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Services</h4>
             <ul className="space-y-3">
-              {['Marketplace Advertising', 'Account Management', 'International Expansion', 'Listing Optimization', 'Creative & A+ Content', 'Trendyol & Temu Ads', 'Data Analytics'].map((s) => (
+              {['Marketplace Advertising', 'Account Management', 'International Expansion', 'Listing Optimization', 'Creative & A+ Content', 'Trendyol Ads', 'Data Analytics'].map((s) => (
                 <li key={s}>
                   <Link to="/services" className="text-navy-300 hover:text-teal-400 text-sm transition-colors">
                     {s}
