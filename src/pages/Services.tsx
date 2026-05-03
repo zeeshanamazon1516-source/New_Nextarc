@@ -41,7 +41,7 @@ const services = [
     features: ['Marketplace-specific demand analysis', 'Cross-platform opportunity mapping', 'Competitor benchmarking', 'Profit margin estimation', 'Launch strategy by platform', 'Trend & seasonality insights'],
   },
   {
-    image: 'https://images.pexels.com/photos/4391470/pexels-photo-4391470.jpeg?auto=compress&cs=tinysrgb&w=200',
+    image: 'https://images.pexels.com/photos/7821684/pexels-photo-7821684.jpeg?auto=compress&cs=tinysrgb&w=200',
     title: 'Return & Reimbursement Management',
     desc: 'Recovering revenue from returned, damaged, or lost inventory is one of the most challenging tasks for sellers. We handle the entire reimbursement claim process so you get back what you\'re owed.',
     features: ['FBA lost & damaged inventory claims', 'Return discrepancy identification', 'Reimbursement filing & follow-up', 'Customer return abuse detection', 'Inventory reconciliation audits', 'Monthly recovery reporting'],
