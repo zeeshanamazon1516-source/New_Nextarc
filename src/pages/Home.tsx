@@ -139,15 +139,14 @@ export default function Home() {
       </section>
 
       {/* Trusted By Strip */}
-      <section className="py-6 border-b border-navy-100 bg-white">
+      <section className="py-8 border-b border-navy-100 bg-white">
         <div className="container-max mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-medium">
-            <span className="text-navy-400">Trusted by brands on:</span>
-            <span className="text-navy-700 font-semibold">Amazon</span>
-            <span className="text-navy-700 font-semibold">Noon</span>
-            <span className="text-navy-700 font-semibold">Trendyol</span>
-            <span className="text-navy-700 font-semibold">Amazon USA</span>
-            <span className="text-navy-700 font-semibold">Shopify</span>
+          <p className="text-center text-navy-400 text-sm font-medium mb-6">Trusted by brands on:</p>
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" className="h-7 opacity-80 hover:opacity-100 transition-opacity" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Noon_logo.svg" alt="Noon" className="h-7 opacity-80 hover:opacity-100 transition-opacity" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Trendyol_online_shopping_logo.png" alt="Trendyol" className="h-7 opacity-80 hover:opacity-100 transition-opacity" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" alt="Shopify" className="h-7 opacity-80 hover:opacity-100 transition-opacity" />
           </div>
         </div>
       </section>
