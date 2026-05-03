@@ -10,10 +10,26 @@ import ScrollReveal from '../components/ScrollReveal';
 import SectionHeading from '../components/SectionHeading';
 
 const banners = [
-  '/account_management.png',
-  '/adcampaign.png',
-  '/BSR.png',
-  '/invenrtory.png',
+  {
+    image: '/account_management.png',
+    headline: 'Scale Your Amazon & Noon Business',
+    subheadline: 'Data-driven marketplace advertising that delivers measurable ROI across every platform.',
+  },
+  {
+    image: '/adcampaign.png',
+    headline: 'Performance Advertising That Converts',
+    subheadline: 'Reduce ACOS from 50% to 15% with AI-powered campaign optimization.',
+  },
+  {
+    image: '/BSR.png',
+    headline: 'Dominate Best Seller Rankings',
+    subheadline: 'Strategic listing optimization and advertising to win top positions on every marketplace.',
+  },
+  {
+    image: '/invenrtory.png',
+    headline: 'Smart Inventory. Zero Lost Sales.',
+    subheadline: 'Predictive inventory management across Amazon, Noon, Trendyol, and Temu.',
+  },
 ];
 
 const services = [
@@ -29,7 +45,7 @@ const whyUs = [
   { icon: Target, title: 'Marketplace Expertise', desc: 'Deep knowledge of Amazon, Noon, Trendyol & Temu algorithms and best practices.' },
   { icon: Database, title: 'Data-Driven Strategy', desc: 'Every decision backed by real marketplace data, not guesswork.' },
   { icon: TrendingUp, title: 'Conversion Focused', desc: 'We optimize for sales, not vanity metrics. Every action ties to revenue.' },
-  { icon: Globe, title: 'UAE & GCC Experience', desc: '150+ brands managed in UAE, KSA, and international markets.' },
+  { icon: Globe, title: 'UAE & GCC Experience', desc: '25+ brands managed in UAE, KSA, and international markets.' },
 ];
 
 const metrics = [
@@ -59,44 +75,67 @@ export default function Home() {
     <>
       {/* Hero Banner Carousel */}
       <section className="relative pt-16 lg:pt-[72px]">
-        <div className="relative w-full h-[220px] sm:h-[320px] md:h-[400px] lg:h-[500px] xl:h-[560px] overflow-hidden bg-navy-900">
-          {banners.map((src, i) => (
+        <div className="relative w-full h-[420px] sm:h-[480px] md:h-[540px] lg:h-[600px] xl:h-[660px] overflow-hidden bg-navy-900">
+          {banners.map((banner, i) => (
             <div
-              key={src}
+              key={banner.image}
               className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
                 i === current ? 'opacity-100 z-10' : 'opacity-0 z-0'
               }`}
             >
               <img
-                src={src}
-                alt={`NextArc Banner ${i + 1}`}
-                className="w-full h-full object-cover sm:object-cover object-center"
+                src={banner.image}
+                alt={banner.headline}
+                className="w-full h-full object-cover object-center"
               />
+              <div className="absolute inset-0 bg-gradient-to-r from-navy-900/80 via-navy-900/50 to-transparent" />
+              <div className="absolute inset-0 flex items-center">
+                <div className="container-max mx-auto px-4 sm:px-6 lg:px-8">
+                  <div className="max-w-2xl">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-4 drop-shadow-lg" style={{ fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif' }}>
+                      {banner.headline}
+                    </h1>
+                    <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mb-8 max-w-lg">
+                      {banner.subheadline}
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-whatsapp text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
+                        <MessageCircle className="w-5 h-5" />
+                        Get Free Consultation
+                      </a>
+                      <Link to="/case-studies" className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-white bg-white/15 backdrop-blur-sm border border-white/30 hover:bg-white/25 transition-all text-base sm:text-lg" style={{ fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif' }}>
+                        See Results
+                        <ArrowRight className="w-5 h-5" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
 
           {/* Arrows */}
           <button
             onClick={prev}
-            className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 backdrop-blur-sm border border-white/60 flex items-center justify-center text-navy-700 hover:bg-white transition-all shadow-lg"
+            className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/15 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-white/25 transition-all"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button
             onClick={next}
-            className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 backdrop-blur-sm border border-white/60 flex items-center justify-center text-navy-700 hover:bg-white transition-all shadow-lg"
+            className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/15 backdrop-blur-md border border-white/30 flex items-center justify-center text-white hover:bg-white/25 transition-all"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
 
           {/* Dot Indicators */}
-          <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+          <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2.5">
             {banners.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setCurrent(i)}
                 className={`h-2.5 rounded-full transition-all duration-300 ${
-                  i === current ? 'w-8 bg-orange-500' : 'w-2.5 bg-white/70'
+                  i === current ? 'w-8 bg-orange-500 shadow-lg' : 'w-2.5 bg-white/60 hover:bg-white/80'
                 }`}
               />
             ))}

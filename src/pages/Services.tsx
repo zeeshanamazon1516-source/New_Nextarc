@@ -59,21 +59,33 @@ export default function Services() {
     <>
       <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden section-soft">
         <div className="container-max mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-3xl mx-auto text-center">
-            <ScrollReveal>
-              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-teal-50 text-teal-700 border border-teal-100 mb-4">
-                Our Services
-              </span>
-            </ScrollReveal>
-            <ScrollReveal delay={100}>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-navy-900 leading-[1.1] mb-6">
-                Marketplace Ads & Growth <span className="gradient-text">That Scales</span>
-              </h1>
-            </ScrollReveal>
-            <ScrollReveal delay={200}>
-              <p className="text-lg text-navy-500 leading-relaxed">
-                Full-service advertising and management across Amazon, Noon, Trendyol, and Temu. Plus international expansion into USA, UK, and European markets.
-              </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <ScrollReveal>
+                <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-teal-50 text-teal-700 border border-teal-100 mb-4">
+                  Our Services
+                </span>
+              </ScrollReveal>
+              <ScrollReveal delay={100}>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-navy-900 leading-[1.1] mb-6">
+                  Marketplace Ads & Growth <span className="gradient-text">That Scales</span>
+                </h1>
+              </ScrollReveal>
+              <ScrollReveal delay={200}>
+                <p className="text-lg text-navy-500 leading-relaxed">
+                  Full-service advertising and management across Amazon, Noon, Trendyol, and Temu. Plus international expansion into USA, UK, and European markets.
+                </p>
+              </ScrollReveal>
+            </div>
+            <ScrollReveal delay={300}>
+              <div className="hidden lg:block">
+                <img
+                  src="https://images.pexels.com/photos/7681091/pexels-photo-7681091.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Ecommerce analytics and growth"
+                  className="w-full h-80 object-cover rounded-2xl shadow-card"
+                  loading="lazy"
+                />
+              </div>
             </ScrollReveal>
           </div>
         </div>

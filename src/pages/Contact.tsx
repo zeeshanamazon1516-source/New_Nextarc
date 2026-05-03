@@ -63,21 +63,33 @@ export default function Contact() {
     <>
       <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden section-soft">
         <div className="container-max mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-3xl mx-auto text-center">
-            <ScrollReveal>
-              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-teal-50 text-teal-700 border border-teal-100 mb-4">
-                Contact Us
-              </span>
-            </ScrollReveal>
-            <ScrollReveal delay={100}>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-navy-900 leading-[1.1] mb-6">
-                Let's <span className="gradient-text">Talk Growth</span>
-              </h1>
-            </ScrollReveal>
-            <ScrollReveal delay={200}>
-              <p className="text-lg text-navy-500 leading-relaxed">
-                Ready to scale your ecommerce business? Reach out and we'll get back to you within 24 hours.
-              </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <ScrollReveal>
+                <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-teal-50 text-teal-700 border border-teal-100 mb-4">
+                  Contact Us
+                </span>
+              </ScrollReveal>
+              <ScrollReveal delay={100}>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-navy-900 leading-[1.1] mb-6">
+                  Let's <span className="gradient-text">Talk Growth</span>
+                </h1>
+              </ScrollReveal>
+              <ScrollReveal delay={200}>
+                <p className="text-lg text-navy-500 leading-relaxed">
+                  Ready to scale your ecommerce business? Reach out and we'll get back to you within 24 hours.
+                </p>
+              </ScrollReveal>
+            </div>
+            <ScrollReveal delay={300}>
+              <div className="hidden lg:block">
+                <img
+                  src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Modern workspace communication"
+                  className="w-full h-72 object-cover rounded-2xl shadow-card"
+                  loading="lazy"
+                />
+              </div>
             </ScrollReveal>
           </div>
         </div>

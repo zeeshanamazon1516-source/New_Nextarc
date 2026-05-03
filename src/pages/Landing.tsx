@@ -285,7 +285,7 @@ export default function Landing() {
               Ready to Scale?
             </h2>
             <p className="text-navy-500 text-lg max-w-xl mx-auto mb-8">
-              Join 150+ brands that scale across global marketplaces with NextArc.
+              Join 25+ brands that scale across global marketplaces with NextArc.
             </p>
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-whatsapp text-xl px-10 py-5 animate-pulse-glow">
               <MessageCircle className="w-6 h-6" />

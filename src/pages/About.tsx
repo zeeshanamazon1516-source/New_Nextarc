@@ -22,21 +22,33 @@ export default function About() {
     <>
       <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden section-soft">
         <div className="container-max mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-3xl">
-            <ScrollReveal>
-              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-teal-50 text-teal-700 border border-teal-100 mb-4">
-                About Us
-              </span>
-            </ScrollReveal>
-            <ScrollReveal delay={100}>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-navy-900 leading-[1.1] mb-6">
-                We Are a <span className="gradient-text">Global Ecommerce</span> Ad Agency
-              </h1>
-            </ScrollReveal>
-            <ScrollReveal delay={200}>
-              <p className="text-lg text-navy-500 leading-relaxed max-w-2xl">
-                We manage and scale brands on Amazon, Noon, Trendyol, and Temu using performance advertising, data strategy, and international expansion expertise. From UAE to USA, UK, and beyond.
-              </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <ScrollReveal>
+                <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase bg-teal-50 text-teal-700 border border-teal-100 mb-4">
+                  About Us
+                </span>
+              </ScrollReveal>
+              <ScrollReveal delay={100}>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-navy-900 leading-[1.1] mb-6">
+                  We Are a <span className="gradient-text">Global Ecommerce</span> Ad Agency
+                </h1>
+              </ScrollReveal>
+              <ScrollReveal delay={200}>
+                <p className="text-lg text-navy-500 leading-relaxed">
+                  We manage and scale brands on Amazon, Noon, Trendyol, and Temu using performance advertising, data strategy, and international expansion expertise. From UAE to USA, UK, and beyond.
+                </p>
+              </ScrollReveal>
+            </div>
+            <ScrollReveal delay={300}>
+              <div className="hidden lg:block">
+                <img
+                  src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  alt="Professional team collaboration"
+                  className="w-full h-80 object-cover rounded-2xl shadow-card"
+                  loading="lazy"
+                />
+              </div>
             </ScrollReveal>
           </div>
         </div>
@@ -59,9 +71,9 @@ export default function About() {
             <ScrollReveal delay={200}>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { val: '150+', label: 'Brands Managed' },
+                  { val: '25+', label: 'Brands Managed' },
                   { val: '5+', label: 'Marketplaces' },
-                  { val: '95%', label: 'Retention Rate' },
+                  { val: '50% → 15%', label: 'ACOS Reduced' },
                   { val: '$25M+', label: 'Ad Spend Managed' },
                 ].map((item) => (
                   <div key={item.label} className="glass-card p-6 text-center">
