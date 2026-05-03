@@ -1,4 +1,4 @@
-import { MessageCircle, ArrowRight, ShoppingCart, BarChart3, Search, Palette, Database, CheckCircle2, Lightbulb, Zap, Globe } from 'lucide-react';
+import { MessageCircle, ArrowRight, ShoppingCart, BarChart3, Search, Palette, Database, CheckCircle2, Lightbulb, Zap, Globe, RotateCcw } from 'lucide-react';
 import { WHATSAPP_URL } from '../lib/constants';
 import ScrollReveal from '../components/ScrollReveal';
 import { Link } from 'react-router-dom';
@@ -39,6 +39,12 @@ const services = [
     title: 'Product Recommendation & Market Research',
     desc: 'Identify winning products for each marketplace based on demand, competition, and margin analysis. Know what to sell and where before you invest.',
     features: ['Marketplace-specific demand analysis', 'Cross-platform opportunity mapping', 'Competitor benchmarking', 'Profit margin estimation', 'Launch strategy by platform', 'Trend & seasonality insights'],
+  },
+  {
+    icon: RotateCcw,
+    title: 'Return & Reimbursement Management',
+    desc: 'Recovering revenue from returned, damaged, or lost inventory is one of the most challenging tasks for sellers. We handle the entire reimbursement claim process so you get back what you\'re owed.',
+    features: ['FBA lost & damaged inventory claims', 'Return discrepancy identification', 'Reimbursement filing & follow-up', 'Customer return abuse detection', 'Inventory reconciliation audits', 'Monthly recovery reporting'],
   },
   {
     icon: Zap,

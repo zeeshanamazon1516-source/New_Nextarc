@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {
   MessageCircle, ArrowRight, ShoppingCart, BarChart3, Search, Palette,
   TrendingUp, Database, Globe,
-  ChevronLeft, ChevronRight, Package, PieChart, Target
+  ChevronLeft, ChevronRight, Package, PieChart, Target, RotateCcw
 } from 'lucide-react';
 import { WHATSAPP_URL } from '../lib/constants';
 import ScrollReveal from '../components/ScrollReveal';
@@ -36,6 +36,7 @@ const services = [
   { icon: ShoppingCart, title: 'Account Management', desc: 'Full-service marketplace management across Amazon, Noon, and Trendyol.' },
   { icon: Search, title: 'Listing Optimization', desc: 'SEO-first titles, bullets, and keywords optimized for each marketplace algorithm.' },
   { icon: BarChart3, title: 'PPC Advertising', desc: 'Performance-driven ad campaigns that maximize ROAS across all platforms.' },
+  { icon: RotateCcw, title: 'Return & Reimbursement Management', desc: 'We recover lost revenue from returned items by filing and tracking reimbursement claims on your behalf.' },
   { icon: Package, title: 'Inventory Planning', desc: 'Smart inventory management to maintain stock levels and avoid lost sales.' },
   { icon: PieChart, title: 'Reporting & Analytics', desc: 'Custom dashboards tracking sales, ads, conversion rates, and revenue trends.' },
   { icon: Palette, title: 'A+ Content & Brand Store', desc: 'Premium visual content that drives clicks and builds brand authority.' },
