@@ -40,7 +40,7 @@ const services = [
   { image: 'https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&w=200', title: 'Inventory Planning', desc: 'Smart inventory management to maintain stock levels and avoid lost sales.' },
   { image: 'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=200', title: 'Reporting & Analytics', desc: 'Custom dashboards tracking sales, ads, conversion rates, and revenue trends.' },
   { image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=200', title: 'A+ Content & Brand Store', desc: 'Premium visual content that drives clicks and builds brand authority.' },
-  { image: 'https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=200', title: 'Social Media Management', desc: 'Meta Ads, Instagram posts, and Facebook page management to drive traffic and brand awareness.' },
+  { image: 'https://images.pexels.com/photos/5053740/pexels-photo-5053740.jpeg?auto=compress&cs=tinysrgb&w=200', title: 'Social Media Management', desc: 'Meta Ads, Instagram posts, and Facebook page management to drive traffic and brand awareness.' },
 ];
 
 const whyUs = [

@@ -59,7 +59,7 @@ const services = [
     features: ['Cross-platform dashboards', 'ROAS & ACOS tracking by marketplace', 'Conversion analysis', 'Revenue attribution by channel', 'Trend forecasting', 'Monthly strategy reviews'],
   },
   {
-    image: 'https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=200',
+    image: 'https://images.pexels.com/photos/5053740/pexels-photo-5053740.jpeg?auto=compress&cs=tinysrgb&w=200',
     title: 'Social Media Management',
     desc: 'Drive traffic and build brand awareness through Meta Ads, Instagram content, and Facebook page management that converts followers into customers.',
     features: ['Meta Ads campaign setup & optimization', 'Instagram post & Reels creation', 'Facebook page management', 'Audience targeting & retargeting', 'Ad creative & copywriting', 'Performance tracking & reporting'],
