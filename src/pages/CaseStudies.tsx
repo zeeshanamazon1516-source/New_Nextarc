@@ -6,6 +6,7 @@ const cases = [
   {
     title: 'Fashion Brand Scales to 3 Marketplaces',
     category: 'Amazon + Noon + Trendyol',
+    image: 'https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&w=600',
     challenge: 'A UAE-based fashion brand was only selling on Amazon UAE with stagnant sales. They wanted to expand but had no strategy for Trendyol or multi-marketplace advertising.',
     solution: 'We optimized their Amazon UAE ads, launched them on Noon with full catalog setup, and expanded to Trendyol with localized listings and promoted ads strategy.',
     results: [
@@ -19,6 +20,7 @@ const cases = [
   {
     title: 'Health Brand ACOS from 45% to 18% on Amazon & Temu',
     category: 'Amazon UAE + Temu',
+    image: 'https://images.pexels.com/photos/3735149/pexels-photo-3735149.jpeg?auto=compress&cs=tinysrgb&w=600',
     challenge: 'A health and beauty brand was overspending on Amazon ads (45% ACOS) and wanted to diversify to Temu but didn\'t know how to structure ads on both platforms.',
     solution: 'We restructured Amazon campaigns, implemented aggressive negative keywords, and simultaneously launched their top sellers on Temu with optimized promotional strategy.',
     results: [
@@ -32,6 +34,7 @@ const cases = [
   {
     title: '5X Growth via USA & UK Expansion',
     category: 'International Expansion',
+    image: 'https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=600',
     challenge: 'An electronics brand was doing well in UAE but had plateaued. They wanted to enter the US and UK markets but lacked the knowledge of FBA logistics, compliance, and local ad strategy.',
     solution: 'We handled full market entry for Amazon USA and UK - from FBA setup and localized listings to launch advertising campaigns. Simultaneously maintained their UAE marketplace presence.',
     results: [
@@ -45,6 +48,7 @@ const cases = [
   {
     title: 'Trendyol Launch Generates $200K in 60 Days',
     category: 'Trendyol',
+    image: 'https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg?auto=compress&cs=tinysrgb&w=600',
     challenge: 'A home & lifestyle brand wanted to enter the Turkish market via Trendyol but had zero presence, no local knowledge, and needed end-to-end marketplace setup.',
     solution: 'We handled full Trendyol onboarding, localized 50+ product listings, set up promoted listings strategy, and managed pricing to be competitive in the Turkish market.',
     results: [
@@ -87,31 +91,57 @@ export default function CaseStudies() {
           {cases.map((cs, i) => (
             <ScrollReveal key={cs.title} delay={i * 100}>
               <div className={`card overflow-hidden border-l-4 ${cs.accent}`}>
-                <div className="p-6 sm:p-8 lg:p-10">
-                  <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-navy-50 text-navy-600 mb-4">
-                    {cs.category}
-                  </span>
-                  <h3 className="text-2xl font-bold text-navy-900 mb-6">{cs.title}</h3>
-
-                  <div className="grid lg:grid-cols-2 gap-8 mb-8">
-                    <div>
-                      <h4 className="text-sm font-semibold text-teal-700 uppercase tracking-wider mb-2">Challenge</h4>
-                      <p className="text-navy-500 text-sm leading-relaxed">{cs.challenge}</p>
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-orange-600 uppercase tracking-wider mb-2">Solution</h4>
-                      <p className="text-navy-500 text-sm leading-relaxed">{cs.solution}</p>
-                    </div>
+                <div className="grid lg:grid-cols-[280px,1fr] gap-0">
+                  <div className="hidden lg:block">
+                    <img
+                      src={cs.image}
+                      alt={cs.title}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
                   </div>
-
-                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                    {cs.results.map((r) => (
-                      <div key={r.label} className="bg-navy-50/50 rounded-xl p-4 text-center">
-                        <r.icon className="w-5 h-5 text-teal-500 mx-auto mb-2" />
-                        <div className="text-xl font-bold text-navy-800">{r.metric}</div>
-                        <div className="text-navy-400 text-xs mt-1">{r.label}</div>
+                  <div className="p-6 sm:p-8 lg:p-10">
+                    <div className="flex items-start gap-4 mb-4 lg:hidden">
+                      <img
+                        src={cs.image}
+                        alt={cs.title}
+                        className="w-20 h-20 rounded-xl object-cover shrink-0"
+                        loading="lazy"
+                      />
+                      <div>
+                        <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-navy-50 text-navy-600 mb-2">
+                          {cs.category}
+                        </span>
+                        <h3 className="text-xl font-bold text-navy-900">{cs.title}</h3>
                       </div>
-                    ))}
+                    </div>
+                    <div className="hidden lg:block">
+                      <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-navy-50 text-navy-600 mb-4">
+                        {cs.category}
+                      </span>
+                      <h3 className="text-2xl font-bold text-navy-900 mb-6">{cs.title}</h3>
+                    </div>
+
+                    <div className="grid lg:grid-cols-2 gap-8 mb-8">
+                      <div>
+                        <h4 className="text-sm font-semibold text-teal-700 uppercase tracking-wider mb-2">Challenge</h4>
+                        <p className="text-navy-500 text-sm leading-relaxed">{cs.challenge}</p>
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-semibold text-orange-600 uppercase tracking-wider mb-2">Solution</h4>
+                        <p className="text-navy-500 text-sm leading-relaxed">{cs.solution}</p>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                      {cs.results.map((r) => (
+                        <div key={r.label} className="bg-navy-50/50 rounded-xl p-4 text-center">
+                          <r.icon className="w-5 h-5 text-teal-500 mx-auto mb-2" />
+                          <div className="text-xl font-bold text-navy-800">{r.metric}</div>
+                          <div className="text-navy-400 text-xs mt-1">{r.label}</div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
