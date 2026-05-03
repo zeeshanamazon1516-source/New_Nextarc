@@ -1,4 +1,4 @@
-import { MessageCircle, CheckCircle2, Zap, Flame, Crown, ArrowRight, Shield, Clock, Users, TrendingUp } from 'lucide-react';
+import { MessageCircle, CheckCircle2, Zap, Flame, Crown, ArrowRight, Shield, Users, TrendingUp } from 'lucide-react';
 import { WHATSAPP_URL } from '../lib/constants';
 import ScrollReveal from '../components/ScrollReveal';
 import SectionHeading from '../components/SectionHeading';
@@ -58,12 +58,6 @@ const plans = [
   },
 ];
 
-const stats = [
-  { value: '95%', label: 'Client Retention', icon: Users },
-  { value: '30-60', label: 'Days to Results', icon: Clock },
-  { value: '3x', label: 'Avg Revenue Growth', icon: TrendingUp },
-  { value: '100%', label: 'Data Secure', icon: Shield },
-];
 
 export default function Pricing() {
   return (
@@ -91,17 +85,6 @@ export default function Pricing() {
               <p className="text-lg text-navy-200 leading-relaxed max-w-2xl mx-auto mb-10">
                 Flexible plans tailored to your stage of growth. All plans include a free consultation to understand your needs and build your custom roadmap.
               </p>
-            </ScrollReveal>
-            <ScrollReveal delay={300}>
-              <div className="flex flex-wrap justify-center gap-8 mt-8">
-                {stats.map((stat) => (
-                  <div key={stat.label} className="text-center">
-                    <stat.icon className="w-5 h-5 text-teal-400 mx-auto mb-1.5" />
-                    <div className="text-2xl font-bold text-white">{stat.value}</div>
-                    <div className="text-xs text-navy-300">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
             </ScrollReveal>
           </div>
         </div>
@@ -160,7 +143,7 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Trust Banner with Image */}
+      {/* Why Choose Us */}
       <section className="section-padding section-soft overflow-hidden">
         <div className="container-max mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -170,29 +153,40 @@ export default function Pricing() {
                   Why Choose Us
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-bold text-navy-900 mb-6">
-                  Trusted by Brands Across the Globe
+                  Your Growth Is Our Mission
                 </h2>
-                <p className="text-navy-500 leading-relaxed mb-8">
-                  We have helped hundreds of sellers and brands scale across Amazon, Noon, and Trendyol. Our data-driven approach ensures every dollar you invest returns measurable growth.
+                <p className="text-navy-500 leading-relaxed mb-6">
+                  We take a data-driven approach to marketplace management. Every strategy is backed by real analytics, continuous optimization, and deep platform expertise across Amazon, Noon, and Trendyol.
                 </p>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="p-4 rounded-xl bg-white border border-navy-100/60 shadow-card">
-                    <div className="text-2xl font-bold text-teal-600 mb-1">500+</div>
-                    <div className="text-sm text-navy-500">Brands Scaled</div>
-                  </div>
-                  <div className="p-4 rounded-xl bg-white border border-navy-100/60 shadow-card">
-                    <div className="text-2xl font-bold text-teal-600 mb-1">$50M+</div>
-                    <div className="text-sm text-navy-500">Revenue Generated</div>
-                  </div>
-                  <div className="p-4 rounded-xl bg-white border border-navy-100/60 shadow-card">
-                    <div className="text-2xl font-bold text-teal-600 mb-1">12+</div>
-                    <div className="text-sm text-navy-500">Marketplaces</div>
-                  </div>
-                  <div className="p-4 rounded-xl bg-white border border-navy-100/60 shadow-card">
-                    <div className="text-2xl font-bold text-teal-600 mb-1">95%</div>
-                    <div className="text-sm text-navy-500">Client Retention</div>
-                  </div>
-                </div>
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-teal-100 flex items-center justify-center shrink-0 mt-0.5">
+                      <Shield className="w-4 h-4 text-teal-600" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-semibold text-navy-800">No Long-Term Contracts</div>
+                      <div className="text-sm text-navy-500">Flexible month-to-month plans. Stay because of results, not obligations.</div>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-teal-100 flex items-center justify-center shrink-0 mt-0.5">
+                      <Users className="w-4 h-4 text-teal-600" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-semibold text-navy-800">Dedicated Account Manager</div>
+                      <div className="text-sm text-navy-500">A single point of contact who understands your brand inside and out.</div>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-teal-100 flex items-center justify-center shrink-0 mt-0.5">
+                      <TrendingUp className="w-4 h-4 text-teal-600" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-semibold text-navy-800">Transparent Reporting</div>
+                      <div className="text-sm text-navy-500">Clear, honest reports so you always know exactly where your investment is going.</div>
+                    </div>
+                  </li>
+                </ul>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={200}>
@@ -202,17 +196,6 @@ export default function Pricing() {
                   alt="Team collaboration on e-commerce strategy"
                   className="rounded-2xl shadow-card-hover w-full h-80 lg:h-96 object-cover"
                 />
-                <div className="absolute -bottom-4 -left-4 bg-white rounded-xl p-4 shadow-card-hover border border-navy-100/60">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center">
-                      <TrendingUp className="w-5 h-5 text-teal-600" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-bold text-navy-900">Avg. 3x Growth</div>
-                      <div className="text-xs text-navy-400">Within 90 days</div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </ScrollReveal>
           </div>
