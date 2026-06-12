@@ -59,12 +59,15 @@ const metrics = [
 
 export default function Home() {
   const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState<'next' | 'prev'>('next');
 
   const next = useCallback(() => {
+    setDirection('next');
     setCurrent((c) => (c + 1) % banners.length);
   }, []);
 
   const prev = useCallback(() => {
+    setDirection('prev');
     setCurrent((c) => (c - 1 + banners.length) % banners.length);
   }, []);
 
@@ -75,67 +78,112 @@ export default function Home() {
 
   return (
     <>
-      {/* Hero Banner Carousel */}
-      <section className="relative pt-16 lg:pt-[72px]">
-        <div className="relative w-full overflow-hidden bg-white">
-          <div className="relative w-full" style={{ aspectRatio: '16 / 6' }}>
+      {/* Hero Banner */}
+      <section className="relative pt-16 lg:pt-[76px] overflow-hidden">
+        <div className="relative w-full bg-navy-950">
+          {/* Background gradient overlay */}
+          <div className="absolute inset-0 z-[1] bg-gradient-to-r from-navy-950/90 via-navy-900/60 to-transparent" />
+          <div className="absolute inset-0 z-[1] bg-gradient-to-t from-navy-950/80 via-transparent to-navy-950/40" />
+
+          {/* Carousel images */}
+          <div className="relative w-full h-[480px] sm:h-[540px] lg:h-[620px]">
             {banners.map((banner, i) => (
               <div
                 key={banner.image}
-                className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-                  i === current ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                  i === current
+                    ? 'opacity-100 scale-100 z-10'
+                    : 'opacity-0 scale-105 z-0'
                 }`}
               >
                 <img
                   src={banner.image}
                   alt={banner.headline}
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
             ))}
 
-            {/* Arrows */}
+            {/* Text overlay */}
+            <div className="absolute inset-0 z-20 flex items-center">
+              <div className="container-max mx-auto px-6 sm:px-8 lg:px-12">
+                <div className="max-w-2xl">
+                  {banners.map((banner, i) => (
+                    <div
+                      key={banner.headline}
+                      className={`absolute transition-all duration-500 ease-out ${
+                        i === current
+                          ? 'opacity-100 translate-y-0'
+                          : direction === 'next'
+                          ? 'opacity-0 translate-y-8'
+                          : 'opacity-0 -translate-y-8'
+                      }`}
+                      style={{ transitionDelay: i === current ? '200ms' : '0ms' }}
+                    >
+                      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-extrabold text-white leading-[1.1] mb-4 sm:mb-6 font-heading drop-shadow-lg">
+                        {banner.headline}
+                      </h1>
+                      <p className="text-base sm:text-lg lg:text-xl text-white/85 leading-relaxed max-w-lg drop-shadow-md">
+                        {banner.subheadline}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* CTA buttons */}
+            <div className="absolute bottom-16 sm:bottom-20 left-0 right-0 z-20">
+              <div className="container-max mx-auto px-6 sm:px-8 lg:px-12">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-semibold text-white bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 transition-all duration-200 shadow-lg shadow-emerald-500/30 hover:-translate-y-0.5 active:translate-y-0 text-[15px] font-heading"
+                  >
+                    <MessageCircle className="w-5 h-5" />
+                    Get Free Consultation
+                  </a>
+                  <Link
+                    to="/case-studies"
+                    className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-semibold text-white border-2 border-white/30 bg-white/10 backdrop-blur-sm hover:bg-white/20 hover:border-white/50 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 text-[15px] font-heading"
+                  >
+                    See Results
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Navigation Arrows */}
             <button
               onClick={prev}
-              className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 backdrop-blur-sm border border-navy-200 flex items-center justify-center text-navy-700 hover:bg-white transition-all shadow-lg"
+              className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/20 hover:border-white/40 transition-all duration-200"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={next}
-              className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 backdrop-blur-sm border border-navy-200 flex items-center justify-center text-navy-700 hover:bg-white transition-all shadow-lg"
+              className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/20 hover:border-white/40 transition-all duration-200"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
 
-            {/* Dot Indicators */}
-            <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2.5">
+            {/* Progress Indicators */}
+            <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
               {banners.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setCurrent(i)}
-                  className={`h-2.5 rounded-full transition-all duration-300 ${
-                    i === current ? 'w-8 bg-orange-500 shadow-lg' : 'w-2.5 bg-navy-300 hover:bg-navy-400'
+                  className={`h-1.5 rounded-full transition-all duration-500 ${
+                    i === current
+                      ? 'w-10 bg-white shadow-lg'
+                      : 'w-3 bg-white/40 hover:bg-white/60'
                   }`}
                 />
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Below Banner */}
-      <section className="py-8 sm:py-10 bg-white border-b border-navy-100">
-        <div className="container-max mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-whatsapp text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto">
-              <MessageCircle className="w-5 h-5" />
-              Get Free Consultation
-            </a>
-            <Link to="/case-studies" className="btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto">
-              See Results
-              <ArrowRight className="w-5 h-5" />
-            </Link>
           </div>
         </div>
       </section>
@@ -282,7 +330,7 @@ export default function Home() {
                     <MessageCircle className="w-5 h-5" />
                     Chat on WhatsApp
                   </a>
-                  <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-navy-900 bg-white hover:bg-navy-50 transition-all shadow-lg hover:-translate-y-0.5 text-lg" style={{ fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif' }}>
+                  <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-navy-900 bg-white hover:bg-navy-50 transition-all shadow-lg hover:-translate-y-0.5 text-lg font-heading">
                     Request Free Review
                     <ArrowRight className="w-5 h-5" />
                   </Link>
