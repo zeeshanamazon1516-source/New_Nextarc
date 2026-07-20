@@ -4,10 +4,12 @@ interface SectionHeadingProps {
   tag?: string;
   title: string;
   description?: string;
+  subtitle?: string;
   center?: boolean;
 }
 
-export default function SectionHeading({ tag, title, description, center = true }: SectionHeadingProps) {
+export default function SectionHeading({ tag, title, description, subtitle, center = true }: SectionHeadingProps) {
+  const desc = description || subtitle;
   return (
     <ScrollReveal className={`mb-12 lg:mb-16 ${center ? 'text-center' : ''}`}>
       {tag && (
@@ -16,8 +18,8 @@ export default function SectionHeading({ tag, title, description, center = true 
         </span>
       )}
       <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 text-balance">{title}</h2>
-      {description && (
-        <p className="mt-4 text-navy-500 text-lg max-w-2xl leading-relaxed mx-auto">{description}</p>
+      {desc && (
+        <p className="mt-4 text-navy-500 text-lg max-w-2xl leading-relaxed mx-auto">{desc}</p>
       )}
     </ScrollReveal>
   );

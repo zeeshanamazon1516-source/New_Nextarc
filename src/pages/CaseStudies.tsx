@@ -1,6 +1,10 @@
-import { MessageCircle, TrendingUp, Target, DollarSign, ArrowDown, ArrowUp, Globe } from 'lucide-react';
+import { MessageCircle, TrendingUp, Target, DollarSign, ArrowDown, ArrowUp, Globe, ImageIcon } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { WHATSAPP_URL } from '../lib/constants';
+import { trackEvent } from '../lib/analytics';
 import ScrollReveal from '../components/ScrollReveal';
+import SEO from '../components/SEO';
+import { ProfessionalServiceSchema } from '../components/JsonLd';
 
 const cases = [
   {
@@ -78,6 +82,13 @@ const cases = [
 export default function CaseStudies() {
   return (
     <>
+      <SEO
+        title="Case Studies: Real Amazon & Noon Growth Results | NextArc"
+        description="Real results from real brands: 120% sales growth, ACOS cut from 45% to 18%, $200K UK launch in 60 days. See how NextArc scales marketplace brands."
+        path="/case-studies"
+      />
+      <ProfessionalServiceSchema />
+
       <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden section-soft">
         <div className="container-max mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-3xl mx-auto text-center">
@@ -109,18 +120,22 @@ export default function CaseStudies() {
                   <div className="hidden lg:block">
                     <img
                       src={cs.image}
-                      alt={cs.title}
+                      alt={`${cs.title} - NextArc case study results`}
                       className="w-full h-full object-cover"
                       loading="lazy"
+                      width="280"
+                      height="400"
                     />
                   </div>
                   <div className="p-6 sm:p-8 lg:p-10">
                     <div className="flex items-start gap-4 mb-4 lg:hidden">
                       <img
                         src={cs.image}
-                        alt={cs.title}
+                        alt={`${cs.title} - NextArc case study`}
                         className="w-20 h-20 rounded-xl object-cover shrink-0"
                         loading="lazy"
+                        width="80"
+                        height="80"
                       />
                       <div>
                         <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-navy-50 text-navy-600 mb-2">
@@ -136,7 +151,7 @@ export default function CaseStudies() {
                       <h3 className="text-2xl font-bold text-navy-900 mb-6">{cs.title}</h3>
                     </div>
 
-                    <div className="grid lg:grid-cols-2 gap-8 mb-8">
+                    <div className="grid lg:grid-cols-2 gap-8 mb-6">
                       <div>
                         <h4 className="text-sm font-semibold text-teal-700 uppercase tracking-wider mb-2">Challenge</h4>
                         <p className="text-navy-500 text-sm leading-relaxed">{cs.challenge}</p>
@@ -145,6 +160,12 @@ export default function CaseStudies() {
                         <h4 className="text-sm font-semibold text-orange-600 uppercase tracking-wider mb-2">Solution</h4>
                         <p className="text-navy-500 text-sm leading-relaxed">{cs.solution}</p>
                       </div>
+                    </div>
+
+                    {/* Dashboard Screenshot Placeholder */}
+                    <div className="mb-6 p-4 rounded-xl border-2 border-dashed border-navy-200 bg-navy-50/30 flex items-center justify-center gap-3">
+                      <ImageIcon className="w-5 h-5 text-navy-300" />
+                      <span className="text-navy-400 text-sm">Anonymized dashboard screenshot</span>
                     </div>
 
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -174,10 +195,21 @@ export default function CaseStudies() {
                 <p className="text-navy-300 text-lg max-w-xl mx-auto mb-8">
                   Let's create the next success story together. Book a free strategy call today.
                 </p>
-                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-whatsapp text-lg px-8 py-4">
-                  <MessageCircle className="w-5 h-5" />
-                  Get Similar Results
-                </a>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-whatsapp text-lg px-8 py-4"
+                    onClick={() => trackEvent('whatsapp_click', { location: 'case_studies_cta' })}
+                  >
+                    <MessageCircle className="w-5 h-5" />
+                    Get Similar Results
+                  </a>
+                  <Link to="/contact#book" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-navy-900 bg-white hover:bg-navy-50 transition-all shadow-lg text-lg font-heading">
+                    Get Free Consultation
+                  </Link>
+                </div>
               </div>
             </div>
           </ScrollReveal>

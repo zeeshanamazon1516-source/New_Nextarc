@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import { TrendingUp, Phone, MapPin, MessageCircle } from 'lucide-react';
-import { WHATSAPP_URL } from '../lib/constants';
+import { TrendingUp, Phone, MapPin, MessageCircle, Mail, Linkedin } from 'lucide-react';
+import { WHATSAPP_URL, EMAIL, LINKEDIN_URL } from '../lib/constants';
+import { trackEvent } from '../lib/analytics';
 
 export default function Footer() {
   return (
@@ -19,24 +20,44 @@ export default function Footer() {
             <p className="text-navy-300 text-sm leading-relaxed mb-6">
               Full-service ecommerce ad agency managing brands on Amazon, Noon, and Trendyol. Helping businesses expand globally into USA, UK, and beyond.
             </p>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-emerald-500 hover:bg-emerald-600 transition-colors"
-            >
-              <MessageCircle className="w-4 h-4" />
-              Chat on WhatsApp
-            </a>
+            <div className="flex items-center gap-3">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-emerald-500 hover:bg-emerald-600 transition-colors"
+                onClick={() => trackEvent('whatsapp_click', { location: 'footer' })}
+              >
+                <MessageCircle className="w-4 h-4" />
+                WhatsApp
+              </a>
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-xl text-navy-300 hover:text-teal-400 hover:bg-navy-800 transition-colors"
+                aria-label="NextArc LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
           <div>
             <h4 className="text-white font-semibold mb-4">Services</h4>
             <ul className="space-y-3">
-              {['Marketplace Advertising', 'Account Management', 'International Expansion', 'Listing Optimization', 'Creative & A+ Content', 'Trendyol Ads', 'Data Analytics'].map((s) => (
-                <li key={s}>
-                  <Link to="/services" className="text-navy-300 hover:text-teal-400 text-sm transition-colors">
-                    {s}
+              {[
+                { label: 'Amazon PPC Management', to: '/services/amazon-ppc' },
+                { label: 'Noon Advertising', to: '/services/noon-advertising' },
+                { label: 'Trendyol Ads', to: '/services/trendyol-ads' },
+                { label: 'USA & UK Expansion', to: '/services/usa-uk-expansion' },
+                { label: 'Account Management', to: '/services' },
+                { label: 'Listing Optimization', to: '/services' },
+                { label: 'Creative & A+ Content', to: '/services' },
+              ].map((s) => (
+                <li key={s.label}>
+                  <Link to={s.to} className="text-navy-300 hover:text-teal-400 text-sm transition-colors">
+                    {s.label}
                   </Link>
                 </li>
               ))}
@@ -72,6 +93,12 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-start gap-3">
+                <Mail className="w-4 h-4 text-teal-400 mt-0.5 shrink-0" />
+                <a href={`mailto:${EMAIL}`} className="text-navy-300 hover:text-teal-400 text-sm transition-colors">
+                  {EMAIL}
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-teal-400 mt-0.5 shrink-0" />
                 <span className="text-navy-300 text-sm">Dubai, UAE</span>
               </li>
@@ -84,8 +111,8 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} NextArc. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-navy-400 hover:text-teal-400 text-sm transition-colors">Privacy Policy</a>
-            <a href="#" className="text-navy-400 hover:text-teal-400 text-sm transition-colors">Terms of Service</a>
+            <Link to="/privacy-policy" className="text-navy-400 hover:text-teal-400 text-sm transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="text-navy-400 hover:text-teal-400 text-sm transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#102a43"/>
+      <stop offset="50%" style="stop-color:#1a3a52"/>
+      <stop offset="100%" style="stop-color:#147d64"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1000" cy="100" r="200" fill="#27ab83" opacity="0.1"/>
+  <circle cx="200" cy="500" r="150" fill="#ff6e14" opacity="0.08"/>
+  <text x="100" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="800" fill="#ffffff">NextArc</text>
+  <text x="100" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="400" fill="#9fb3c8">Amazon · Noon · Trendyol</text>
+  <text x="100" y="400" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="400" fill="#9fb3c8">Marketplace Growth Agency</text>
+  <rect x="100" y="460" width="120" height="4" rx="2" fill="#27ab83"/>
+</svg>

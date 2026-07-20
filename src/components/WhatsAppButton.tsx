@@ -1,5 +1,6 @@
 import { MessageCircle } from 'lucide-react';
 import { WHATSAPP_URL } from '../lib/constants';
+import { trackEvent } from '../lib/analytics';
 
 export default function WhatsAppButton() {
   return (
@@ -7,13 +8,11 @@ export default function WhatsAppButton() {
       href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-emerald-500 flex items-center justify-center shadow-lg shadow-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/40 hover:scale-110 transition-all duration-300 group"
+      className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all"
       aria-label="Chat on WhatsApp"
+      onClick={() => trackEvent('whatsapp_click', { location: 'floating_button' })}
     >
-      <MessageCircle className="w-7 h-7 text-white group-hover:scale-110 transition-transform" />
-      <span className="absolute -top-10 right-0 bg-navy-900 text-white text-xs font-medium px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg">
-        Chat with us
-      </span>
+      <MessageCircle className="w-6 h-6" />
     </a>
   );
 }

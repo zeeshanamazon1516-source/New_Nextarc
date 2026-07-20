@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { X, Gift, MessageCircle } from 'lucide-react';
 import { WHATSAPP_AUDIT_URL } from '../lib/constants';
+import { trackEvent } from '../lib/analytics';
 
 export default function ExitPopup() {
   const [show, setShow] = useState(false);
@@ -8,6 +9,10 @@ export default function ExitPopup() {
   useEffect(() => {
     const dismissed = sessionStorage.getItem('exit-popup-dismissed');
     if (dismissed) return;
+
+    // Only activate on desktop (no mouse-leave event on touch devices)
+    const isMobile = window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window;
+    if (isMobile) return;
 
     const handleMouseLeave = (e: MouseEvent) => {
       if (e.clientY <= 0) {
@@ -68,7 +73,10 @@ export default function ExitPopup() {
             target="_blank"
             rel="noopener noreferrer"
             className="btn-whatsapp w-full text-base"
-            onClick={dismiss}
+            onClick={() => {
+              trackEvent('audit_popup_click');
+              dismiss();
+            }}
           >
             <MessageCircle className="w-5 h-5" />
             Get Free Audit on WhatsApp

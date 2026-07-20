@@ -1,36 +1,11 @@
-import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import {
-  MessageCircle, ArrowRight,
-  TrendingUp, Database, Globe,
-  ChevronLeft, ChevronRight, Target
-} from 'lucide-react';
+import { MessageCircle, ArrowRight, TrendingUp, Database, Globe, Target } from 'lucide-react';
 import { WHATSAPP_URL } from '../lib/constants';
+import { trackEvent } from '../lib/analytics';
 import ScrollReveal from '../components/ScrollReveal';
 import SectionHeading from '../components/SectionHeading';
-
-const banners = [
-  {
-    image: '/account_management.png',
-    headline: 'Scale Your Amazon & Noon Business',
-    subheadline: 'Data-driven marketplace advertising that delivers measurable ROI across every platform.',
-  },
-  {
-    image: '/adcampaign.png',
-    headline: 'Performance Advertising That Converts',
-    subheadline: 'Reduce ACOS from 50% to 15% with AI-powered campaign optimization.',
-  },
-  {
-    image: '/BSR.png',
-    headline: 'Dominate Best Seller Rankings',
-    subheadline: 'Strategic listing optimization and advertising to win top positions on every marketplace.',
-  },
-  {
-    image: '/invenrtory.png',
-    headline: 'Smart Inventory. Zero Lost Sales.',
-    subheadline: 'Predictive inventory management across Amazon, Noon, and Trendyol.',
-  },
-];
+import SEO from '../components/SEO';
+import { ProfessionalServiceSchema } from '../components/JsonLd';
 
 const services = [
   { image: 'https://images.pexels.com/photos/7681091/pexels-photo-7681091.jpeg?auto=compress&cs=tinysrgb&w=200', title: 'Account Management', desc: 'Full-service marketplace management across Amazon, Noon, and Trendyol.' },
@@ -57,85 +32,95 @@ const metrics = [
   { value: '3.8X', label: 'ROAS', sublabel: 'average ad return' },
 ];
 
+function DashboardMock() {
+  return (
+    <div className="relative w-full max-w-lg mx-auto lg:mx-0">
+      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 shadow-2xl">
+        <div className="flex items-center gap-2 mb-4">
+          <div className="w-3 h-3 rounded-full bg-teal-400" />
+          <span className="text-xs text-navy-300 font-medium">Live Dashboard</span>
+        </div>
+        <div className="grid grid-cols-2 gap-3">
+          {[
+            { label: 'ACOS', value: '18%', trend: '-27%', positive: true },
+            { label: 'ROAS', value: '3.8x', trend: '+42%', positive: true },
+            { label: 'Buy Box', value: '82%', trend: '+12%', positive: true },
+            { label: 'Sales', value: '+35%', trend: 'MoM', positive: true },
+          ].map((card) => (
+            <div key={card.label} className="bg-white/5 border border-white/10 rounded-xl p-4">
+              <div className="text-[11px] text-navy-400 uppercase tracking-wider mb-1">{card.label}</div>
+              <div className="text-2xl font-bold text-white mb-1">{card.value}</div>
+              <div className="flex items-center gap-1">
+                <svg className="w-3 h-3 text-teal-400" viewBox="0 0 12 12" fill="none">
+                  <path d="M2 8L6 4L10 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <span className="text-xs text-teal-400">{card.trend}</span>
+              </div>
+              <div className="mt-2 h-6 flex items-end gap-0.5">
+                {Array.from({ length: 8 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="flex-1 bg-teal-400/30 rounded-sm"
+                    style={{ height: `${20 + Math.random() * 80}%` }}
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
-  const [current, setCurrent] = useState(0);
-
-  const next = useCallback(() => {
-    setCurrent((c) => (c + 1) % banners.length);
-  }, []);
-
-  const prev = useCallback(() => {
-    setCurrent((c) => (c - 1 + banners.length) % banners.length);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(next, 10000);
-    return () => clearInterval(interval);
-  }, [next]);
-
   return (
     <>
-      {/* Hero Banner Carousel */}
-      <section className="relative pt-16 lg:pt-[72px]">
-        <div className="relative w-full overflow-hidden bg-white">
-          <div className="relative w-full" style={{ aspectRatio: '16 / 6' }}>
-            {banners.map((banner, i) => (
-              <div
-                key={banner.image}
-                className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-                  i === current ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                }`}
-              >
-                <img
-                  src={banner.image}
-                  alt={banner.headline}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-            ))}
+      <SEO
+        title="Ecommerce Marketplace Ad Agency | Amazon, Noon & Trendyol | NextArc"
+        description="NextArc is a Dubai-based ecommerce ad agency managing brands on Amazon, Noon & Trendyol. PPC, listing optimization, account management & USA/UK expansion. Free audit."
+        path="/"
+      />
+      <ProfessionalServiceSchema />
 
-            {/* Arrows */}
-            <button
-              onClick={prev}
-              className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 backdrop-blur-sm border border-navy-200 flex items-center justify-center text-navy-700 hover:bg-white transition-all shadow-lg"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={next}
-              className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 backdrop-blur-sm border border-navy-200 flex items-center justify-center text-navy-700 hover:bg-white transition-all shadow-lg"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-
-            {/* Dot Indicators */}
-            <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2.5">
-              {banners.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrent(i)}
-                  className={`h-2.5 rounded-full transition-all duration-300 ${
-                    i === current ? 'w-8 bg-orange-500 shadow-lg' : 'w-2.5 bg-navy-300 hover:bg-navy-400'
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
+      {/* Hero Section */}
+      <section className="relative pt-24 lg:pt-28 pb-16 lg:pb-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950" />
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-teal-500 rounded-full blur-[120px]" />
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-orange-500 rounded-full blur-[140px]" />
         </div>
-      </section>
-
-      {/* CTA Below Banner */}
-      <section className="py-8 sm:py-10 bg-white border-b border-navy-100">
-        <div className="container-max mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-whatsapp text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto">
-              <MessageCircle className="w-5 h-5" />
-              Get Free Consultation
-            </a>
-            <Link to="/case-studies" className="btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto">
-              See Results
-              <ArrowRight className="w-5 h-5" />
-            </Link>
+        <div className="container-max mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[3.25rem] font-extrabold text-white leading-[1.1] mb-6">
+                Ecommerce Marketplace Ad Agency for{' '}
+                <span className="bg-gradient-to-r from-teal-300 to-teal-400 bg-clip-text text-transparent">
+                  Amazon, Noon & Trendyol
+                </span>
+              </h1>
+              <p className="text-lg text-navy-200 leading-relaxed mb-8 max-w-xl">
+                We manage, advertise, and scale brands across Amazon, Noon, and Trendyol — and expand them into the USA, UK, and beyond. Data-driven strategy, transparent reporting, no long-term contracts.
+              </p>
+              <div className="flex flex-col sm:flex-row items-start gap-3">
+                <Link
+                  to="/contact#book"
+                  className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto"
+                >
+                  Get Free Consultation
+                </Link>
+                <Link
+                  to="/case-studies"
+                  className="btn-secondary !bg-transparent !text-white !border-white/30 hover:!bg-white/10 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto"
+                >
+                  See Our Results
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
+            </div>
+            <div className="hidden lg:block">
+              <DashboardMock />
+            </div>
           </div>
         </div>
       </section>
@@ -143,12 +128,12 @@ export default function Home() {
       {/* Trusted By Strip */}
       <section className="py-8 border-b border-navy-100 bg-white">
         <div className="container-max mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-navy-400 text-sm font-medium mb-6">Trusted by brands on:</p>
+          <p className="text-center text-navy-400 text-sm font-medium mb-6">We manage and advertise brands on:</p>
           <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" className="h-7 opacity-80 hover:opacity-100 transition-opacity" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Noon_Website_Logo.svg" alt="Noon" className="h-8 opacity-80 hover:opacity-100 transition-opacity" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Trendyol_logo.svg" alt="Trendyol" className="h-7 opacity-80 hover:opacity-100 transition-opacity" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" alt="Shopify" className="h-7 opacity-80 hover:opacity-100 transition-opacity" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon marketplace logo" className="h-7 opacity-80 hover:opacity-100 transition-opacity" width="100" height="30" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Noon_Website_Logo.svg" alt="Noon marketplace logo" className="h-8 opacity-80 hover:opacity-100 transition-opacity" width="80" height="32" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Trendyol_logo.svg" alt="Trendyol marketplace logo" className="h-7 opacity-80 hover:opacity-100 transition-opacity" width="120" height="30" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg" alt="Shopify ecommerce platform logo" className="h-7 opacity-80 hover:opacity-100 transition-opacity" width="100" height="30" />
           </div>
         </div>
       </section>
@@ -166,7 +151,7 @@ export default function Home() {
               <ScrollReveal key={service.title} delay={i * 80}>
                 <div className="card p-6 lg:p-8 h-full group">
                   <div className="w-14 h-14 rounded-xl overflow-hidden mb-5 group-hover:scale-110 transition-transform shadow-sm">
-                    <img src={service.image} alt={service.title} className="w-full h-full object-cover" loading="lazy" />
+                    <img src={service.image} alt={`${service.title} - NextArc marketplace service`} className="w-full h-full object-cover" loading="lazy" width="56" height="56" />
                   </div>
                   <h3 className="text-lg font-bold text-navy-800 mb-2">{service.title}</h3>
                   <p className="text-navy-500 text-sm leading-relaxed">{service.desc}</p>
@@ -238,9 +223,9 @@ export default function Home() {
           />
           <div className="grid sm:grid-cols-3 gap-6">
             {[
-              { name: 'Ahmed K.', role: 'Fashion Brand Owner', text: 'Sales doubled across Amazon and Noon. Their marketplace ads expertise is unmatched.' },
-              { name: 'Sara M.', role: 'Health & Beauty CEO', text: 'They launched us on Amazon USA and UK while optimizing our UAE ad spend. Revenue up 3X.' },
-              { name: 'Omar R.', role: 'Electronics Brand, UK', text: 'NextArc helped us expand from UAE to Amazon UK and USA. Their international strategy delivered 5X growth.' },
+              { name: 'Ahmed K.', role: 'Fashion Brand Owner', company: '', text: 'Sales doubled across Amazon and Noon. Their marketplace ads expertise is unmatched.' },
+              { name: 'Sara M.', role: 'CEO', company: 'Health & Beauty Brand', text: 'They launched us on Amazon USA and UK while optimizing our UAE ad spend. Revenue up 3X.' },
+              { name: 'Omar R.', role: 'Founder', company: 'Electronics Brand, UK', text: 'NextArc helped us expand from UAE to Amazon UK and USA. Their international strategy delivered 5X growth.' },
             ].map((t, i) => (
               <ScrollReveal key={t.name} delay={i * 100}>
                 <div className="glass-card p-6 lg:p-8 h-full flex flex-col">
@@ -252,14 +237,20 @@ export default function Home() {
                     ))}
                   </div>
                   <p className="text-navy-600 text-sm leading-relaxed flex-1 mb-5">"{t.text}"</p>
-                  <div>
-                    <div className="text-navy-800 font-semibold text-sm">{t.name}</div>
-                    <div className="text-navy-400 text-xs">{t.role}</div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-navy-100 flex items-center justify-center">
+                      <span className="text-sm font-semibold text-navy-600">{t.name.charAt(0)}</span>
+                    </div>
+                    <div>
+                      <div className="text-navy-800 font-semibold text-sm">{t.name}</div>
+                      <div className="text-navy-400 text-xs">{t.role}{t.company ? `, ${t.company}` : ''}</div>
+                    </div>
                   </div>
                 </div>
               </ScrollReveal>
             ))}
           </div>
+          <p className="text-center text-navy-400 text-xs mt-6">Names withheld under NDA available on request.</p>
         </div>
       </section>
 
@@ -278,12 +269,18 @@ export default function Home() {
                   Get a free strategy call. No commitment, just actionable insights for your business.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-whatsapp text-lg px-8 py-4">
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-whatsapp text-lg px-8 py-4"
+                    onClick={() => trackEvent('whatsapp_click', { location: 'home_cta' })}
+                  >
                     <MessageCircle className="w-5 h-5" />
                     Chat on WhatsApp
                   </a>
-                  <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-navy-900 bg-white hover:bg-navy-50 transition-all shadow-lg hover:-translate-y-0.5 text-lg font-heading">
-                    Request Free Review
+                  <Link to="/contact#book" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-navy-900 bg-white hover:bg-navy-50 transition-all shadow-lg hover:-translate-y-0.5 text-lg font-heading">
+                    Get Free Consultation
                     <ArrowRight className="w-5 h-5" />
                   </Link>
                 </div>

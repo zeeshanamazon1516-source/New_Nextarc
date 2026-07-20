@@ -2,6 +2,8 @@ import { MessageCircle, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { WHATSAPP_URL } from '../lib/constants';
 import ScrollReveal from '../components/ScrollReveal';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
+import { ProfessionalServiceSchema, ServiceSchema } from '../components/JsonLd';
 
 const services = [
   {
@@ -9,18 +11,21 @@ const services = [
     title: 'Marketplace Advertising (PPC & Sponsored Ads)',
     desc: 'Performance-driven ad campaigns across Amazon, Noon, and Trendyol. We manage your entire ad strategy to maximize ROAS and scale profitably.',
     features: ['Amazon Sponsored Products & Brands & Display', 'Noon Ads campaign management', 'Trendyol promoted listings & ads', 'Amazon USA & UK PPC strategy', 'ACOS reduction & bid automation', 'Weekly performance reports & scaling'],
+    link: '/services/amazon-ppc',
   },
   {
     image: 'https://images.pexels.com/photos/7681091/pexels-photo-7681091.jpeg?auto=compress&cs=tinysrgb&w=200',
     title: 'Marketplace Account Management',
     desc: 'Full-service account management across Amazon, Noon, and Trendyol. From daily operations to growth strategy, we handle everything.',
     features: ['Multi-marketplace daily monitoring', 'Inventory & pricing strategy', 'Catalog management & compliance', 'Performance reporting', 'Competitor analysis', 'Account health maintenance'],
+    link: '/services/noon-advertising',
   },
   {
     image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=200',
     title: 'International Market Expansion (USA & UK)',
     desc: 'We help brands expand from local markets into the USA, UK, and Europe. Full market entry strategy, localized listings, compliant setup, and launch advertising.',
     features: ['USA Amazon FBA/FBM setup', 'UK marketplace launch strategy', 'Localized listing & keyword optimization', 'Cross-border logistics guidance', 'Market research & competitor mapping', 'Launch advertising campaigns'],
+    link: '/services/usa-uk-expansion',
   },
   {
     image: 'https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=200',
@@ -39,6 +44,7 @@ const services = [
     title: 'Product Recommendation & Market Research',
     desc: 'Identify winning products for each marketplace based on demand, competition, and margin analysis. Know what to sell and where before you invest.',
     features: ['Marketplace-specific demand analysis', 'Cross-platform opportunity mapping', 'Competitor benchmarking', 'Profit margin estimation', 'Launch strategy by platform', 'Trend & seasonality insights'],
+    link: '/services/trendyol-ads',
   },
   {
     image: 'https://images.pexels.com/photos/7821684/pexels-photo-7821684.jpeg?auto=compress&cs=tinysrgb&w=200',
@@ -69,6 +75,16 @@ const services = [
 export default function Services() {
   return (
     <>
+      <SEO
+        title="Amazon, Noon & Trendyol Advertising Services | NextArc"
+        description="Full-service marketplace growth: PPC management, listing SEO, A+ content, account management, reimbursements, quick commerce, and international expansion."
+        path="/services"
+      />
+      <ProfessionalServiceSchema />
+      {services.map((s) => (
+        <ServiceSchema key={s.title} name={s.title} description={s.desc} />
+      ))}
+
       <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden section-soft">
         <div className="container-max mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -93,9 +109,11 @@ export default function Services() {
               <div className="hidden lg:block">
                 <img
                   src="https://images.pexels.com/photos/7681091/pexels-photo-7681091.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Ecommerce analytics and growth"
+                  alt="Ecommerce marketplace advertising analytics dashboard"
                   className="w-full h-80 object-cover rounded-2xl shadow-card"
                   loading="lazy"
+                  width="800"
+                  height="320"
                 />
               </div>
             </ScrollReveal>
@@ -112,13 +130,22 @@ export default function Services() {
                   <div>
                     <div className="flex items-start gap-4 mb-4">
                       <div className="w-14 h-14 rounded-xl overflow-hidden shrink-0 shadow-sm">
-                        <img src={service.image} alt={service.title} className="w-full h-full object-cover" loading="lazy" />
+                        <img src={service.image} alt={`${service.title} - NextArc service`} className="w-full h-full object-cover" loading="lazy" width="56" height="56" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-navy-800">{service.title}</h3>
+                        <h2 className="text-xl font-bold text-navy-800">{service.title}</h2>
                         <p className="text-navy-500 text-sm leading-relaxed mt-1">{service.desc}</p>
                       </div>
                     </div>
+                    {service.link && (
+                      <Link
+                        to={service.link}
+                        className="inline-flex items-center gap-1.5 text-teal-600 hover:text-teal-700 font-medium text-sm mt-2 transition-colors"
+                      >
+                        Learn more
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    )}
                   </div>
                   <div className="lg:w-72">
                     <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2">
@@ -152,7 +179,7 @@ export default function Services() {
                     <MessageCircle className="w-5 h-5" />
                     Chat on WhatsApp
                   </a>
-                  <Link to="/pricing" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-navy-900 bg-white hover:bg-navy-50 transition-all shadow-lg text-lg" style={{ fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif' }}>
+                  <Link to="/pricing" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-navy-900 bg-white hover:bg-navy-50 transition-all shadow-lg text-lg font-heading">
                     View Pricing
                     <ArrowRight className="w-5 h-5" />
                   </Link>

@@ -1,12 +1,15 @@
 import { MessageCircle, CheckCircle2, Zap, Flame, Crown, ArrowRight, Shield, Users, TrendingUp } from 'lucide-react';
-import { WHATSAPP_URL } from '../lib/constants';
+import { Link } from 'react-router-dom';
 import ScrollReveal from '../components/ScrollReveal';
 import SectionHeading from '../components/SectionHeading';
+import SEO from '../components/SEO';
+import { ProfessionalServiceSchema, FAQSchema } from '../components/JsonLd';
 
 const plans = [
   {
     name: 'Starter',
     icon: Zap,
+    price: 'From [STARTER_PRICE]',
     desc: 'Perfect for sellers on 1-2 marketplaces looking to optimize their ads and listings.',
     features: [
       'Ads management (1 marketplace)',
@@ -23,6 +26,7 @@ const plans = [
   {
     name: 'Growth',
     icon: Flame,
+    price: 'From [GROWTH_PRICE]',
     desc: 'Best for brands scaling across multiple marketplaces with aggressive ad strategies.',
     features: [
       'Full Ads Management (Amazon, Noon, or Trendyol)',
@@ -40,6 +44,7 @@ const plans = [
   {
     name: 'Pro + Expansion',
     icon: Crown,
+    price: 'From [PRO_PRICE]',
     desc: 'Complete growth solution including international expansion into USA, UK, and new markets.',
     features: [
       'Full account & ads management (all marketplaces)',
@@ -58,11 +63,24 @@ const plans = [
   },
 ];
 
+const faqs = [
+  { question: 'How long until I see results?', answer: 'Most clients see measurable improvements within 30-60 days, with significant growth by 90 days.' },
+  { question: 'Do you require long-term contracts?', answer: 'No. We offer flexible month-to-month agreements. Our 95% retention rate speaks for itself.' },
+  { question: 'Which platforms do you support?', answer: 'We manage Amazon (USA, UK, UAE, KSA), Noon, and Trendyol. Multi-platform and international expansion are available on Growth and Pro plans.' },
+  { question: 'Can I switch plans later?', answer: 'Absolutely. You can upgrade or adjust your plan anytime as your business grows.' },
+];
 
 export default function Pricing() {
   return (
     <>
-      {/* Hero Section */}
+      <SEO
+        title="Pricing & Plans for Marketplace Management | NextArc"
+        description="Flexible month-to-month plans for Amazon, Noon & Trendyol management. No long-term contracts. Book a free consultation and get a custom growth roadmap."
+        path="/pricing"
+      />
+      <ProfessionalServiceSchema />
+      <FAQSchema faqs={faqs} />
+
       <section className="relative pt-28 pb-20 sm:pt-36 sm:pb-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950" />
         <div className="absolute inset-0 opacity-20">
@@ -91,7 +109,6 @@ export default function Pricing() {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
       </section>
 
-      {/* Pricing Cards */}
       <section className="section-padding section-light -mt-8">
         <div className="container-max mx-auto">
           <div className="grid lg:grid-cols-3 gap-8">
@@ -113,7 +130,8 @@ export default function Pricing() {
 
                   <div className="p-6 lg:p-8 flex flex-col flex-1">
                     <div className="mb-6 pb-6 border-b border-navy-100">
-                      <span className="text-navy-700 text-sm font-medium">Custom pricing based on your needs</span>
+                      <span className="text-navy-900 text-lg font-bold">{plan.price}</span>
+                      <p className="text-navy-400 text-xs mt-1">Final quote after your free audit.</p>
                     </div>
 
                     <ul className="space-y-3.5 flex-1 mb-8">
@@ -125,16 +143,13 @@ export default function Pricing() {
                       ))}
                     </ul>
 
-                    <a
-                      href={WHATSAPP_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      to="/contact#book"
                       className={`group ${plan.highlight ? 'btn-primary w-full' : 'btn-secondary w-full'}`}
                     >
-                      <MessageCircle className="w-4 h-4" />
                       Get Started
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </ScrollReveal>
@@ -143,7 +158,6 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
       <section className="section-padding section-soft overflow-hidden">
         <div className="container-max mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -193,8 +207,11 @@ export default function Pricing() {
               <div className="relative">
                 <img
                   src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Team collaboration on e-commerce strategy"
+                  alt="Team collaboration on marketplace strategy and growth planning"
                   className="rounded-2xl shadow-card-hover w-full h-80 lg:h-96 object-cover"
+                  loading="lazy"
+                  width="800"
+                  height="384"
                 />
               </div>
             </ScrollReveal>
@@ -202,39 +219,19 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Process Section with Images */}
       <section className="section-padding section-light">
         <div className="container-max mx-auto">
           <SectionHeading tag="How It Works" title="Simple 3-Step Process" subtitle="Getting started is easy. We handle the complexity so you can focus on your business." />
           <div className="grid md:grid-cols-3 gap-8 mt-12">
             {[
-              {
-                step: '01',
-                title: 'Free Consultation',
-                desc: 'We analyze your current marketplace performance and identify growth opportunities.',
-                image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600',
-              },
-              {
-                step: '02',
-                title: 'Custom Strategy',
-                desc: 'Our team builds a tailored roadmap with clear milestones and KPIs for your brand.',
-                image: 'https://images.pexels.com/photos/7681091/pexels-photo-7681091.jpeg?auto=compress&cs=tinysrgb&w=600',
-              },
-              {
-                step: '03',
-                title: 'Launch & Scale',
-                desc: 'We execute the strategy, continuously optimize, and scale your results month over month.',
-                image: 'https://images.pexels.com/photos/7681731/pexels-photo-7681731.jpeg?auto=compress&cs=tinysrgb&w=600',
-              },
+              { step: '01', title: 'Free Consultation', desc: 'We analyze your current marketplace performance and identify growth opportunities.', image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600' },
+              { step: '02', title: 'Custom Strategy', desc: 'Our team builds a tailored roadmap with clear milestones and KPIs for your brand.', image: 'https://images.pexels.com/photos/7681091/pexels-photo-7681091.jpeg?auto=compress&cs=tinysrgb&w=600' },
+              { step: '03', title: 'Launch & Scale', desc: 'We execute the strategy, continuously optimize, and scale your results month over month.', image: 'https://images.pexels.com/photos/7681731/pexels-photo-7681731.jpeg?auto=compress&cs=tinysrgb&w=600' },
             ].map((item, i) => (
               <ScrollReveal key={item.step} delay={i * 120}>
                 <div className="group relative rounded-2xl overflow-hidden border border-navy-100/60 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1">
                   <div className="h-48 overflow-hidden">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+                    <img src={item.image} alt={`Step ${item.step}: ${item.title}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" width="600" height="192" />
                     <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-teal-600 flex items-center justify-center text-white text-sm font-bold shadow-md">
                       {item.step}
                     </div>
@@ -250,21 +247,15 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* FAQ Section */}
       <section className="section-padding section-soft">
         <div className="container-max mx-auto">
           <SectionHeading tag="FAQ" title="Common Questions" subtitle="Everything you need to know about our pricing and process." />
           <div className="max-w-2xl mx-auto space-y-4 mt-10">
-            {[
-              { q: 'How long until I see results?', a: 'Most clients see measurable improvements within 30-60 days, with significant growth by 90 days.' },
-              { q: 'Do you require long-term contracts?', a: 'No. We offer flexible month-to-month agreements. Our 95% retention rate speaks for itself.' },
-              { q: 'Which platforms do you support?', a: 'We manage Amazon (USA, UK, UAE, KSA), Noon, and Trendyol. Multi-platform and international expansion are available on Growth and Pro plans.' },
-              { q: 'Can I switch plans later?', a: 'Absolutely. You can upgrade or adjust your plan anytime as your business grows.' },
-            ].map((faq) => (
-              <ScrollReveal key={faq.q}>
+            {faqs.map((faq) => (
+              <ScrollReveal key={faq.question}>
                 <div className="card p-6 hover:border-teal-200">
-                  <h4 className="text-navy-800 font-semibold mb-2">{faq.q}</h4>
-                  <p className="text-navy-500 text-sm leading-relaxed">{faq.a}</p>
+                  <h3 className="text-navy-800 font-semibold mb-2">{faq.question}</h3>
+                  <p className="text-navy-500 text-sm leading-relaxed">{faq.answer}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -272,7 +263,6 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="relative section-padding overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950" />
         <div className="absolute inset-0 opacity-15">
@@ -285,10 +275,10 @@ export default function Pricing() {
             <p className="text-navy-200 text-lg max-w-xl mx-auto mb-8">
               Book a free consultation and we'll recommend the best plan based on your goals and budget.
             </p>
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-whatsapp text-lg px-8 py-4 shadow-lg">
+            <Link to="/contact#book" className="btn-whatsapp text-lg px-8 py-4 shadow-lg">
               <MessageCircle className="w-5 h-5" />
               Get a Custom Quote
-            </a>
+            </Link>
           </ScrollReveal>
         </div>
       </section>

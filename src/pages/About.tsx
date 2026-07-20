@@ -1,8 +1,10 @@
-import { MessageCircle, ArrowRight, Target, BarChart3, ShieldCheck, TrendingUp, Users, Globe } from 'lucide-react';
-import { WHATSAPP_URL } from '../lib/constants';
+import { MessageCircle, ArrowRight, Target, BarChart3, ShieldCheck, TrendingUp, Users, Globe, Linkedin } from 'lucide-react';
+import { WHATSAPP_URL, LINKEDIN_URL } from '../lib/constants';
 import ScrollReveal from '../components/ScrollReveal';
 import SectionHeading from '../components/SectionHeading';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
+import { ProfessionalServiceSchema } from '../components/JsonLd';
 
 const reasons = [
   { icon: BarChart3, title: 'Performance Advertising Experts', desc: 'Certified marketplace ads specialists managing $25M+ in annual ad spend across Amazon, Noon, and Trendyol.' },
@@ -20,6 +22,13 @@ const values = [
 export default function About() {
   return (
     <>
+      <SEO
+        title="About NextArc | Marketplace Advertising Experts in Dubai, UAE"
+        description="Meet NextArc — performance advertising specialists managing 25+ brands across Amazon, Noon, and Trendyol, with proven USA & UK market expansion experience."
+        path="/about"
+      />
+      <ProfessionalServiceSchema />
+
       <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden section-soft">
         <div className="container-max mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -44,9 +53,11 @@ export default function About() {
               <div className="hidden lg:block">
                 <img
                   src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Professional team collaboration"
+                  alt="NextArc team collaborating on ecommerce strategy"
                   className="w-full h-80 object-cover rounded-2xl shadow-card"
                   loading="lazy"
+                  width="800"
+                  height="320"
                 />
               </div>
             </ScrollReveal>
@@ -73,7 +84,7 @@ export default function About() {
                 {[
                   { val: '25+', label: 'Brands Managed' },
                   { val: '5+', label: 'Marketplaces' },
-                  { val: '50% → 15%', label: 'ACOS Reduced' },
+                  { val: '45% → 18%', label: 'ACOS Reduced' },
                   { val: '$25M+', label: 'Ad Spend Managed' },
                 ].map((item) => (
                   <div key={item.label} className="glass-card p-6 text-center">
@@ -87,7 +98,32 @@ export default function About() {
         </div>
       </section>
 
+      {/* Meet the Team */}
       <section className="section-padding section-soft">
+        <div className="container-max mx-auto">
+          <SectionHeading tag="Our Team" title="Meet the Team" />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <ScrollReveal>
+              <div className="card p-6 lg:p-8 text-center">
+                <div className="w-24 h-24 rounded-full bg-navy-100 mx-auto mb-4 flex items-center justify-center overflow-hidden">
+                  <span className="text-2xl font-bold text-navy-400">Photo</span>
+                </div>
+                <h3 className="text-lg font-bold text-navy-800">[FOUNDER_NAME]</h3>
+                <p className="text-teal-600 text-sm font-medium mb-3">[FOUNDER_TITLE]</p>
+                <p className="text-navy-500 text-sm leading-relaxed mb-4">
+                  Marketplace advertising specialist with extensive experience scaling brands across Amazon, Noon, and Trendyol. Led international expansion campaigns generating $25M+ in managed ad spend across UAE, USA, and UK markets.
+                </p>
+                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-navy-500 hover:text-teal-600 transition-colors text-sm">
+                  <Linkedin className="w-4 h-4" />
+                  LinkedIn
+                </a>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding section-light">
         <div className="container-max mx-auto">
           <SectionHeading
             tag="Why Us"
@@ -110,7 +146,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="section-padding section-light">
+      <section className="section-padding section-soft">
         <div className="container-max mx-auto">
           <SectionHeading tag="Our Values" title="What We Stand For" />
           <div className="grid sm:grid-cols-3 gap-6">
@@ -127,7 +163,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="section-padding section-soft">
+      <section className="section-padding section-light">
         <div className="container-max mx-auto text-center">
           <ScrollReveal>
             <h2 className="text-3xl sm:text-4xl font-bold text-navy-900 mb-4">Ready to Partner with Us?</h2>
@@ -139,8 +175,8 @@ export default function About() {
                 <MessageCircle className="w-5 h-5" />
                 Chat on WhatsApp
               </a>
-              <Link to="/contact" className="btn-secondary text-lg px-8 py-4">
-                Contact Us
+              <Link to="/contact#book" className="btn-secondary text-lg px-8 py-4">
+                Get Free Consultation
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
