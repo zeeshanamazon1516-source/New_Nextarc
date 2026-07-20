@@ -15,6 +15,10 @@ export default function Contact() {
     e.preventDefault();
     setStatus('loading');
     try {
+      if (!supabase) {
+        setStatus('error');
+        return;
+      }
       const { error } = await supabase.from('contact_submissions').insert({
         name: form.name,
         email: form.email,
