@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Outlet } from 'react-router-dom';
 import { useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -37,11 +37,13 @@ function ScrollToTop() {
   return null;
 }
 
-function Layout({ children }: { children: React.ReactNode }) {
+function Layout() {
   return (
     <>
       <Header />
-      <main className="min-h-screen">{children}</main>
+      <main className="min-h-screen">
+        <Outlet />
+      </main>
       <Footer />
       <WhatsAppButton />
       <ExitPopup />
@@ -59,30 +61,23 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/landing" element={<Landing />} />
-        <Route
-          path="*"
-          element={
-            <Layout>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/services/amazon-ppc" element={<AmazonPPC />} />
-                <Route path="/services/noon-advertising" element={<NoonAdvertising />} />
-                <Route path="/services/trendyol-ads" element={<TrendyolAds />} />
-                <Route path="/services/usa-uk-expansion" element={<UsaUkExpansion />} />
-                <Route path="/case-studies" element={<CaseStudies />} />
-                <Route path="/pricing" element={<Pricing />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/:slug" element={<BlogPost />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                <Route path="/terms-of-service" element={<TermsOfService />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </Layout>
-          }
-        />
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/amazon-ppc" element={<AmazonPPC />} />
+          <Route path="/services/noon-advertising" element={<NoonAdvertising />} />
+          <Route path="/services/trendyol-ads" element={<TrendyolAds />} />
+          <Route path="/services/usa-uk-expansion" element={<UsaUkExpansion />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
       </Routes>
     </>
   );
