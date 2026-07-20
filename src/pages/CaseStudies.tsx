@@ -1,4 +1,4 @@
-import { MessageCircle, TrendingUp, Target, DollarSign, ArrowDown, ArrowUp, Globe, ImageIcon } from 'lucide-react';
+import { MessageCircle, TrendingUp, Target, DollarSign, ArrowDown, ArrowUp, Globe, Image as ImageIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { WHATSAPP_URL } from '../lib/constants';
 import { trackEvent } from '../lib/analytics';
