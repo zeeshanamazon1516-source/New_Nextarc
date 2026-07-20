@@ -9,7 +9,7 @@ const plans = [
   {
     name: 'Starter',
     icon: Zap,
-    price: 'From [STARTER_PRICE]',
+    price: 'Custom',
     desc: 'Perfect for sellers on 1-2 marketplaces looking to optimize their ads and listings.',
     features: [
       'Ads management (1 marketplace)',
@@ -26,7 +26,7 @@ const plans = [
   {
     name: 'Growth',
     icon: Flame,
-    price: 'From [GROWTH_PRICE]',
+    price: 'Custom',
     desc: 'Best for brands scaling across multiple marketplaces with aggressive ad strategies.',
     features: [
       'Full Ads Management (Amazon, Noon, or Trendyol)',
@@ -44,7 +44,7 @@ const plans = [
   {
     name: 'Pro + Expansion',
     icon: Crown,
-    price: 'From [PRO_PRICE]',
+    price: 'Custom',
     desc: 'Complete growth solution including international expansion into USA, UK, and new markets.',
     features: [
       'Full account & ads management (all marketplaces)',
@@ -131,7 +131,7 @@ export default function Pricing() {
                   <div className="p-6 lg:p-8 flex flex-col flex-1">
                     <div className="mb-6 pb-6 border-b border-navy-100">
                       <span className="text-navy-900 text-lg font-bold">{plan.price}</span>
-                      <p className="text-navy-400 text-xs mt-1">Final quote after your free audit.</p>
+                      <p className="text-navy-400 text-xs mt-1">Custom pricing based on your needs.</p>
                     </div>
 
                     <ul className="space-y-3.5 flex-1 mb-8">

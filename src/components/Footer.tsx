@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { TrendingUp, Phone, MapPin, MessageCircle, Mail, Linkedin } from 'lucide-react';
-import { WHATSAPP_URL, EMAIL, LINKEDIN_URL } from '../lib/constants';
+import { TrendingUp, Phone, MapPin, MessageCircle, Mail } from 'lucide-react';
+import { WHATSAPP_URL, EMAIL } from '../lib/constants';
 import { trackEvent } from '../lib/analytics';
 
 export default function Footer() {
@@ -30,15 +30,6 @@ export default function Footer() {
               >
                 <MessageCircle className="w-4 h-4" />
                 WhatsApp
-              </a>
-              <a
-                href={LINKEDIN_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-xl text-navy-300 hover:text-teal-400 hover:bg-navy-800 transition-colors"
-                aria-label="NextArc LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
               </a>
             </div>
           </div>

@@ -1,7 +1,8 @@
-import { useState, useEffect, useRef, type FormEvent } from 'react';
-import { MessageCircle, Send, Phone, MapPin, Mail, Loader2, Calendar, CheckCircle } from 'lucide-react';
-import { WHATSAPP_URL, EMAIL, CALENDLY_URL, FORMSPREE_ENDPOINT } from '../lib/constants';
+import { useState, type FormEvent } from 'react';
+import { MessageCircle, Send, Phone, MapPin, Mail, Loader2, CheckCircle } from 'lucide-react';
+import { WHATSAPP_URL, EMAIL } from '../lib/constants';
 import { trackEvent } from '../lib/analytics';
+import { supabase } from '../lib/supabase';
 import ScrollReveal from '../components/ScrollReveal';
 import SEO from '../components/SEO';
 import { ProfessionalServiceSchema } from '../components/JsonLd';
@@ -9,38 +10,23 @@ import { ProfessionalServiceSchema } from '../components/JsonLd';
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const bookRef = useRef<HTMLDivElement>(null);
-  const observerFired = useRef(false);
-
-  useEffect(() => {
-    if (!bookRef.current) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !observerFired.current) {
-          observerFired.current = true;
-          trackEvent('calendly_view');
-        }
-      },
-      { threshold: 0.3 }
-    );
-    observer.observe(bookRef.current);
-    return () => observer.disconnect();
-  }, []);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setStatus('loading');
     try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(form),
+      const { error } = await supabase.from('contact_submissions').insert({
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        message: form.message,
+        source: 'website',
       });
-      if (res.ok) {
+      if (error) {
+        setStatus('error');
+      } else {
         setStatus('success');
         trackEvent('form_submit');
-      } else {
-        setStatus('error');
       }
     } catch {
       setStatus('error');
@@ -92,37 +78,8 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Calendly Booking Section */}
-      <section id="book" ref={bookRef} className="section-padding section-light">
-        <div className="container-max mx-auto">
-          <ScrollReveal>
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-50 text-teal-700 border border-teal-100 mb-4">
-                <Calendar className="w-4 h-4" />
-                <span className="text-xs font-semibold uppercase tracking-wider">Book a Call</span>
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-navy-900 mb-3">Book a Free Strategy Call</h2>
-              <p className="text-navy-500 text-lg max-w-xl mx-auto">Choose a time that works for you. We will analyze your marketplace presence and share actionable growth insights.</p>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal delay={100}>
-            <div className="max-w-3xl mx-auto">
-              <div className="card p-6 sm:p-8 text-center">
-                <iframe
-                  src={CALENDLY_URL}
-                  className="w-full rounded-xl border-0"
-                  style={{ minHeight: '650px' }}
-                  title="Book a free strategy call with NextArc"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
       {/* Contact Form */}
-      <section className="section-padding section-soft">
+      <section id="book" className="section-padding section-light">
         <div className="container-max mx-auto">
           <div className="grid lg:grid-cols-[1fr,auto] gap-12">
             <ScrollReveal>

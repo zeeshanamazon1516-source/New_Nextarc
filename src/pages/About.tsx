@@ -1,5 +1,5 @@
-import { MessageCircle, ArrowRight, Target, BarChart3, ShieldCheck, TrendingUp, Users, Globe, Linkedin } from 'lucide-react';
-import { WHATSAPP_URL, LINKEDIN_URL } from '../lib/constants';
+import { MessageCircle, ArrowRight, Target, BarChart3, ShieldCheck, TrendingUp, Users, Globe } from 'lucide-react';
+import { WHATSAPP_URL } from '../lib/constants';
 import ScrollReveal from '../components/ScrollReveal';
 import SectionHeading from '../components/SectionHeading';
 import { Link } from 'react-router-dom';
@@ -106,17 +106,13 @@ export default function About() {
             <ScrollReveal>
               <div className="card p-6 lg:p-8 text-center">
                 <div className="w-24 h-24 rounded-full bg-navy-100 mx-auto mb-4 flex items-center justify-center overflow-hidden">
-                  <span className="text-2xl font-bold text-navy-400">Photo</span>
+                  <span className="text-2xl font-bold text-navy-400">SA</span>
                 </div>
-                <h3 className="text-lg font-bold text-navy-800">[FOUNDER_NAME]</h3>
-                <p className="text-teal-600 text-sm font-medium mb-3">[FOUNDER_TITLE]</p>
+                <h3 className="text-lg font-bold text-navy-800">Samin Abbas</h3>
+                <p className="text-teal-600 text-sm font-medium mb-3">Director</p>
                 <p className="text-navy-500 text-sm leading-relaxed mb-4">
                   Marketplace advertising specialist with extensive experience scaling brands across Amazon, Noon, and Trendyol. Led international expansion campaigns generating $25M+ in managed ad spend across UAE, USA, and UK markets.
                 </p>
-                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-navy-500 hover:text-teal-600 transition-colors text-sm">
-                  <Linkedin className="w-4 h-4" />
-                  LinkedIn
-                </a>
               </div>
             </ScrollReveal>
           </div>

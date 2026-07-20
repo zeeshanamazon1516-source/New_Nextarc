@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { SITE_URL, EMAIL, LINKEDIN_URL } from '../lib/constants';
+import { SITE_URL, EMAIL } from '../lib/constants';
 
 export function ProfessionalServiceSchema() {
   const schema = {
@@ -17,7 +17,6 @@ export function ProfessionalServiceSchema() {
       addressCountry: 'AE',
     },
     areaServed: ['AE', 'SA', 'US', 'GB', 'TR'],
-    sameAs: [LINKEDIN_URL],
   };
 
   return (
