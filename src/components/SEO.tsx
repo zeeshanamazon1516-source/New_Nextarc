@@ -14,7 +14,7 @@ export default function SEO({ title, description, path, type = 'website', schema
   const ogImage = `${SITE_URL}/og-image.png`;
 
   return (
-    <Helmet>
+    <Helmet defer={false}>
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={url} />
