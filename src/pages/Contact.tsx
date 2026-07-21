@@ -2,7 +2,6 @@ import { useState, type FormEvent } from 'react';
 import { MessageCircle, Send, Phone, MapPin, Mail, Loader2, CheckCircle } from 'lucide-react';
 import { WHATSAPP_URL, EMAIL } from '../lib/constants';
 import { trackEvent } from '../lib/analytics';
-import { supabase } from '../lib/supabase';
 import ScrollReveal from '../components/ScrollReveal';
 import SEO from '../components/SEO';
 import { ProfessionalServiceSchema } from '../components/JsonLd';
@@ -13,24 +12,27 @@ export default function Contact() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    if (!form.name.trim() || !form.email.trim()) return;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) return;
+
     setStatus('loading');
     try {
-      if (!supabase) {
-        setStatus('error');
-        return;
-      }
-      const { error } = await supabase.from('contact_submissions').insert({
-        name: form.name,
-        email: form.email,
-        phone: form.phone,
-        message: form.message,
-        source: 'website',
+      const res = await fetch('https://formspree.io/f/xkodzkgr', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          message: form.message,
+        }),
       });
-      if (error) {
-        setStatus('error');
-      } else {
+      if (res.ok) {
         setStatus('success');
+        setForm({ name: '', email: '', phone: '', message: '' });
         trackEvent('form_submit');
+      } else {
+        setStatus('error');
       }
     } catch {
       setStatus('error');
