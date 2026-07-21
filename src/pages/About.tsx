@@ -1,4 +1,5 @@
-import { MessageCircle, ArrowRight, Target, BarChart3, ShieldCheck, TrendingUp, Users, Globe } from 'lucide-react';
+import { useState } from 'react';
+import { MessageCircle, ArrowRight, Target, BarChart3, ShieldCheck, TrendingUp, Users, Globe, Crosshair, ShoppingCart, Receipt, Search, PackageX, RotateCcw, CheckCircle2 } from 'lucide-react';
 import { WHATSAPP_URL } from '../lib/constants';
 import ScrollReveal from '../components/ScrollReveal';
 import SectionHeading from '../components/SectionHeading';
@@ -18,6 +19,89 @@ const values = [
   { icon: Users, title: 'Partnership', desc: 'We treat your business as our own. Your revenue growth is our success metric.' },
   { icon: Target, title: 'Precision', desc: 'No wasted ad spend. Every dollar is optimized across every marketplace for maximum return.' },
 ];
+
+const leaks = [
+  { icon: Crosshair, name: 'Bleeding Ad Keywords', desc: 'Broad keywords silently eating 30%+ of ad spend with zero sales attached.' },
+  { icon: ShoppingCart, name: 'Lost Buy Box Hours', desc: 'Pricing and stock gaps handing your sales to competitors for hours every day.' },
+  { icon: Receipt, name: 'Unclaimed Reimbursements', desc: 'Damaged, lost, and returned inventory that Amazon and Noon owe you money for.' },
+  { icon: Search, name: 'Invisible Listings', desc: "Titles and backend keywords that don't match how customers actually search." },
+  { icon: PackageX, name: 'Stockout Blind Spots', desc: 'Running out of stock on best-sellers and losing ranking that takes months to rebuild.' },
+  { icon: RotateCcw, name: 'Untracked Returns', desc: 'Return rates quietly destroying margins with no root-cause analysis.' },
+];
+
+function RevenueLeaks() {
+  const [checked, setChecked] = useState<Set<number>>(new Set());
+
+  function toggle(index: number) {
+    setChecked((prev) => {
+      const next = new Set(prev);
+      if (next.has(index)) next.delete(index);
+      else next.add(index);
+      return next;
+    });
+  }
+
+  const count = checked.size;
+
+  return (
+    <>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {leaks.map((leak, i) => {
+          const isChecked = checked.has(i);
+          return (
+            <ScrollReveal key={leak.name} delay={i * 80}>
+              <button
+                type="button"
+                onClick={() => toggle(i)}
+                className={`card p-6 lg:p-8 h-full w-full text-left group transition-all duration-200 cursor-pointer ${
+                  isChecked
+                    ? 'border-teal-400 ring-2 ring-teal-100 shadow-glow-teal'
+                    : 'hover:border-navy-200 hover:-translate-y-0.5'
+                }`}
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors ${
+                    isChecked
+                      ? 'bg-teal-100 border border-teal-200'
+                      : 'bg-gradient-to-br from-orange-50 to-orange-100 border border-orange-200/50'
+                  }`}>
+                    <leak.icon className={`w-6 h-6 ${isChecked ? 'text-teal-600' : 'text-orange-500'}`} />
+                  </div>
+                  {isChecked && (
+                    <CheckCircle2 className="w-6 h-6 text-teal-500 shrink-0" />
+                  )}
+                </div>
+                <h3 className="text-base font-bold text-navy-800 mb-2">{leak.name}</h3>
+                <p className="text-navy-500 text-sm leading-relaxed">{leak.desc}</p>
+              </button>
+            </ScrollReveal>
+          );
+        })}
+      </div>
+
+      <div className="text-center mt-10 space-y-4">
+        <p className="text-navy-600 font-medium">
+          {count > 0
+            ? `You've spotted ${count} possible leak${count > 1 ? 's' : ''} in your account.`
+            : 'Tap any leak you suspect in your account.'}
+        </p>
+        <Link
+          to="/contact"
+          className={`inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-lg transition-all shadow-lg hover:-translate-y-0.5 ${
+            count > 0
+              ? 'bg-teal-600 hover:bg-teal-700 text-white'
+              : 'bg-navy-100 hover:bg-navy-200 text-navy-700'
+          }`}
+        >
+          {count > 0
+            ? "Find Out What They're Costing You \u2014 Free Audit"
+            : 'Get a Free 6-Point Leak Check'}
+          <ArrowRight className="w-5 h-5" />
+        </Link>
+      </div>
+    </>
+  );
+}
 
 export default function About() {
   return (
@@ -98,24 +182,14 @@ export default function About() {
         </div>
       </section>
 
-      {/* Meet the Team */}
+      {/* Revenue Leaks Section */}
       <section className="section-padding section-soft">
         <div className="container-max mx-auto">
-          <SectionHeading tag="Our Team" title="Meet the Team" />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <ScrollReveal>
-              <div className="card p-6 lg:p-8 text-center">
-                <div className="w-24 h-24 rounded-full bg-navy-100 mx-auto mb-4 flex items-center justify-center overflow-hidden">
-                  <span className="text-2xl font-bold text-navy-400">SA</span>
-                </div>
-                <h3 className="text-lg font-bold text-navy-800">Samin Abbas</h3>
-                <p className="text-teal-600 text-sm font-medium mb-3">Director</p>
-                <p className="text-navy-500 text-sm leading-relaxed mb-4">
-                  Marketplace advertising specialist with extensive experience scaling brands across Amazon, Noon, and Trendyol. Led international expansion campaigns generating $25M+ in managed ad spend across UAE, USA, and UK markets.
-                </p>
-              </div>
-            </ScrollReveal>
-          </div>
+          <SectionHeading tag="Free Audit" title="The Revenue Leaks We Find in Almost Every Account" />
+          <p className="text-center text-navy-500 text-lg max-w-2xl mx-auto -mt-8 mb-10">
+            Most marketplace brands lose 10-20% of potential revenue without knowing it. These are the six leaks we check first.
+          </p>
+          <RevenueLeaks />
         </div>
       </section>
 
