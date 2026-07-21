@@ -1,4 +1,4 @@
-import { MessageCircle, TrendingUp, Target, DollarSign, ArrowDown, ArrowUp, Globe, Image as ImageIcon } from 'lucide-react';
+import { MessageCircle, TrendingUp, Target, DollarSign, ArrowDown, ArrowUp, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { WHATSAPP_URL } from '../lib/constants';
 import { trackEvent } from '../lib/analytics';
@@ -160,12 +160,6 @@ export default function CaseStudies() {
                         <h4 className="text-sm font-semibold text-orange-600 uppercase tracking-wider mb-2">Solution</h4>
                         <p className="text-navy-500 text-sm leading-relaxed">{cs.solution}</p>
                       </div>
-                    </div>
-
-                    {/* Dashboard Screenshot Placeholder */}
-                    <div className="mb-6 p-4 rounded-xl border-2 border-dashed border-navy-200 bg-navy-50/30 flex items-center justify-center gap-3">
-                      <ImageIcon className="w-5 h-5 text-navy-300" />
-                      <span className="text-navy-400 text-sm">Anonymized dashboard screenshot</span>
                     </div>
 
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
