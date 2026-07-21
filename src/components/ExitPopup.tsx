@@ -47,7 +47,8 @@ export default function ExitPopup() {
       >
         <button
           onClick={dismiss}
-          className="absolute top-4 right-4 p-1.5 rounded-lg text-navy-400 hover:text-navy-600 hover:bg-navy-50 transition-colors"
+          className="absolute top-3 right-3 min-w-[48px] min-h-[48px] flex items-center justify-center rounded-lg text-navy-400 hover:text-navy-600 hover:bg-navy-50 transition-colors"
+          aria-label="Close popup"
         >
           <X className="w-5 h-5" />
         </button>

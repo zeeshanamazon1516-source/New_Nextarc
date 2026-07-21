@@ -39,19 +39,20 @@ function DashboardMock() {
         <div className="flex items-center gap-2 mb-4">
           <div className="w-3 h-3 rounded-full bg-teal-400" />
           <span className="text-xs text-navy-300 font-medium">Live Dashboard</span>
+          <span className="text-[10px] text-navy-400 font-semibold uppercase tracking-widest ml-1">Top Accounts</span>
         </div>
         <div className="grid grid-cols-2 gap-3">
           {[
-            { label: 'ACOS', value: '18%', trend: '-27%', positive: true },
-            { label: 'ROAS', value: '3.8x', trend: '+42%', positive: true },
-            { label: 'Buy Box', value: '82%', trend: '+12%', positive: true },
-            { label: 'Sales', value: '+35%', trend: 'MoM', positive: true },
+            { label: 'ACOS', value: '8.4%', trend: '-31%', positive: true, down: true },
+            { label: 'ROAS', value: '10.2x', trend: '+58%', positive: true, down: false },
+            { label: 'Buy Box', value: '94%', trend: '+18%', positive: true, down: false },
+            { label: 'Sales', value: '+62%', trend: 'MoM', positive: true, down: false },
           ].map((card) => (
             <div key={card.label} className="bg-white/5 border border-white/10 rounded-xl p-4">
               <div className="text-[11px] text-navy-400 uppercase tracking-wider mb-1">{card.label}</div>
               <div className="text-2xl font-bold text-white mb-1">{card.value}</div>
               <div className="flex items-center gap-1">
-                <svg className="w-3 h-3 text-teal-400" viewBox="0 0 12 12" fill="none">
+                <svg className={`w-3 h-3 text-teal-400 ${card.down ? 'rotate-180' : ''}`} viewBox="0 0 12 12" fill="none">
                   <path d="M2 8L6 4L10 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 <span className="text-xs text-teal-400">{card.trend}</span>
