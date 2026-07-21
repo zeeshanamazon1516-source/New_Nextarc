@@ -20,7 +20,6 @@ import UsaUkExpansion from './pages/services/UsaUkExpansion';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import NotFound from './pages/NotFound';
-import { initGA4 } from './lib/analytics';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -50,10 +49,6 @@ function WithLayout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  useEffect(() => {
-    initGA4();
-  }, []);
-
   return (
     <>
       <ScrollToTop />

@@ -6,4 +6,4 @@ export const WHATSAPP_AUDIT_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encod
 
 export const SITE_URL = 'https://www.nextarc.me';
 export const EMAIL = 'help@nextarc.me';
-export const GA4_ID = '[GA4_ID]';
+export const GA4_ID = 'G-WYXWVK4NCQ';
