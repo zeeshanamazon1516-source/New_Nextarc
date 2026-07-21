@@ -6,7 +6,7 @@ import {
 import { WHATSAPP_URL, WHATSAPP_AUDIT_URL } from '../lib/constants';
 import ScrollReveal from '../components/ScrollReveal';
 import SEO from '../components/SEO';
-import { ProfessionalServiceSchema } from '../components/JsonLd';
+import { buildProfessionalServiceSchema } from '../components/JsonLd';
 
 const problems = [
   { icon: AlertTriangle, text: 'Low sales and stagnant revenue across marketplaces' },
@@ -53,8 +53,8 @@ export default function Landing() {
         title="Free Amazon & Noon Store Audit | NextArc"
         description="Get a free marketplace store audit from NextArc. We identify revenue leaks in your Amazon, Noon, or Trendyol account and show you how to fix them."
         path="/free-audit"
+        schemas={[buildProfessionalServiceSchema()]}
       />
-      <ProfessionalServiceSchema />
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-navy-100 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
           <div className="flex items-center gap-2">

@@ -2,7 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Clock, Calendar, ArrowLeft } from 'lucide-react';
 import { posts } from './Blog';
 import SEO from '../components/SEO';
-import { BlogPostingSchema, ProfessionalServiceSchema } from '../components/JsonLd';
+import { buildProfessionalServiceSchema, buildBlogPostingSchema } from '../components/JsonLd';
 import { SITE_URL } from '../lib/constants';
 import ScrollReveal from '../components/ScrollReveal';
 
@@ -30,13 +30,15 @@ export default function BlogPost() {
         title={`${post.title} | NextArc Blog`}
         description={post.excerpt}
         path={`/blog/${post.slug}`}
-      />
-      <ProfessionalServiceSchema />
-      <BlogPostingSchema
-        headline={post.title}
-        description={post.excerpt}
-        datePublished={post.dateISO}
-        url={`${SITE_URL}/blog/${post.slug}`}
+        schemas={[
+          buildProfessionalServiceSchema(),
+          buildBlogPostingSchema({
+            headline: post.title,
+            description: post.excerpt,
+            datePublished: post.dateISO,
+            url: `${SITE_URL}/blog/${post.slug}`,
+          }),
+        ]}
       />
 
       <section className="relative pt-28 pb-8 sm:pt-36 sm:pb-12 overflow-hidden section-soft">

@@ -4,7 +4,7 @@ import { WHATSAPP_URL } from '../../lib/constants';
 import { trackEvent } from '../../lib/analytics';
 import ScrollReveal from '../../components/ScrollReveal';
 import SEO from '../../components/SEO';
-import { ProfessionalServiceSchema, ServiceSchema, FAQSchema } from '../../components/JsonLd';
+import { buildProfessionalServiceSchema, buildServiceSchema, buildFAQSchema } from '../../components/JsonLd';
 
 const faqs = [
   { question: 'How does Noon advertising differ from Amazon PPC?', answer: 'Noon uses a different auction system with fewer ad placements and less granular targeting. Success on Noon depends heavily on catalog completeness, pricing competitiveness, and fulfillment speed alongside advertising. We optimize all three levers simultaneously.' },
@@ -19,10 +19,12 @@ export default function NoonAdvertising() {
         title="Noon Ads Agency | Noon Advertising Management UAE & KSA | NextArc"
         description="Expert Noon advertising management for UAE and KSA. Campaign optimization, catalog management, and marketplace growth strategies for the Noon platform."
         path="/services/noon-advertising"
+        schemas={[
+          buildProfessionalServiceSchema(),
+          buildServiceSchema('Noon Advertising Management', 'Full-service Noon advertising and account management for brands selling on Noon UAE and Noon KSA.'),
+          buildFAQSchema(faqs),
+        ]}
       />
-      <ProfessionalServiceSchema />
-      <ServiceSchema name="Noon Advertising Management" description="Full-service Noon advertising and account management for brands selling on Noon UAE and Noon KSA." />
-      <FAQSchema faqs={faqs} />
 
       <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950" />

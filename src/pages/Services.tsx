@@ -3,7 +3,7 @@ import { WHATSAPP_URL } from '../lib/constants';
 import ScrollReveal from '../components/ScrollReveal';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
-import { ProfessionalServiceSchema, ServiceSchema } from '../components/JsonLd';
+import { buildProfessionalServiceSchema, buildServiceSchema } from '../components/JsonLd';
 
 const services = [
   {
@@ -79,11 +79,11 @@ export default function Services() {
         title="Amazon, Noon & Trendyol Advertising Services | NextArc"
         description="Full-service marketplace growth: PPC management, listing SEO, A+ content, account management, reimbursements, quick commerce, and international expansion."
         path="/services"
+        schemas={[
+          buildProfessionalServiceSchema(),
+          ...services.map((s) => buildServiceSchema(s.title, s.desc)),
+        ]}
       />
-      <ProfessionalServiceSchema />
-      {services.map((s) => (
-        <ServiceSchema key={s.title} name={s.title} description={s.desc} />
-      ))}
 
       <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden section-soft">
         <div className="container-max mx-auto px-4 sm:px-6 lg:px-8 relative">

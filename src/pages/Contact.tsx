@@ -4,7 +4,7 @@ import { WHATSAPP_URL, EMAIL } from '../lib/constants';
 import { trackEvent } from '../lib/analytics';
 import ScrollReveal from '../components/ScrollReveal';
 import SEO from '../components/SEO';
-import { ProfessionalServiceSchema } from '../components/JsonLd';
+import { buildProfessionalServiceSchema } from '../components/JsonLd';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
@@ -45,8 +45,8 @@ export default function Contact() {
         title="Contact NextArc | Free Marketplace Strategy Call"
         description="Talk to a marketplace growth expert. WhatsApp us or book a free strategy call — we respond within 24 hours."
         path="/contact"
+        schemas={[buildProfessionalServiceSchema()]}
       />
-      <ProfessionalServiceSchema />
 
       <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden section-soft">
         <div className="container-max mx-auto px-4 sm:px-6 lg:px-8 relative">

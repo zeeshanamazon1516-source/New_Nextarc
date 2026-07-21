@@ -4,7 +4,7 @@ import { WHATSAPP_URL } from '../../lib/constants';
 import { trackEvent } from '../../lib/analytics';
 import ScrollReveal from '../../components/ScrollReveal';
 import SEO from '../../components/SEO';
-import { ProfessionalServiceSchema, ServiceSchema, FAQSchema } from '../../components/JsonLd';
+import { buildProfessionalServiceSchema, buildServiceSchema, buildFAQSchema } from '../../components/JsonLd';
 
 const faqs = [
   { question: 'Do I need a Turkish entity to sell on Trendyol?', answer: 'Trendyol now supports international sellers without requiring a Turkish entity, though having local representation can speed up certain processes. We guide you through the exact requirements based on your product category and business structure.' },
@@ -19,10 +19,12 @@ export default function TrendyolAds() {
         title="Trendyol Agency for International Sellers | NextArc"
         description="Expert Trendyol marketplace management and advertising for international sellers entering the Turkish market. Promoted listings, localization, and growth strategy."
         path="/services/trendyol-ads"
+        schemas={[
+          buildProfessionalServiceSchema(),
+          buildServiceSchema('Trendyol Advertising & Marketplace Management', 'Complete Trendyol marketplace management for international sellers including advertising, localization, and Turkish market entry.'),
+          buildFAQSchema(faqs),
+        ]}
       />
-      <ProfessionalServiceSchema />
-      <ServiceSchema name="Trendyol Advertising & Marketplace Management" description="Complete Trendyol marketplace management for international sellers including advertising, localization, and Turkish market entry." />
-      <FAQSchema faqs={faqs} />
 
       <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950" />

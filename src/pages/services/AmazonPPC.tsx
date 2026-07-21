@@ -4,7 +4,7 @@ import { WHATSAPP_URL } from '../../lib/constants';
 import { trackEvent } from '../../lib/analytics';
 import ScrollReveal from '../../components/ScrollReveal';
 import SEO from '../../components/SEO';
-import { ProfessionalServiceSchema, ServiceSchema, FAQSchema } from '../../components/JsonLd';
+import { buildProfessionalServiceSchema, buildServiceSchema, buildFAQSchema } from '../../components/JsonLd';
 
 const faqs = [
   { question: 'What Amazon ad types do you manage?', answer: 'We manage all Amazon ad formats including Sponsored Products, Sponsored Brands, Sponsored Brands Video, Sponsored Display, and DSP campaigns. We select the optimal mix based on your goals, competition, and budget.' },
@@ -19,10 +19,12 @@ export default function AmazonPPC() {
         title="Amazon PPC Management Agency UAE, USA & UK | NextArc"
         description="Expert Amazon PPC management reducing ACOS and scaling profitable ad campaigns across Sponsored Products, Brands, and Display for UAE, USA, and UK marketplaces."
         path="/services/amazon-ppc"
+        schemas={[
+          buildProfessionalServiceSchema(),
+          buildServiceSchema('Amazon PPC Management', 'Performance-driven Amazon PPC management across Sponsored Products, Brands, and Display with proven ACOS reduction methodology.'),
+          buildFAQSchema(faqs),
+        ]}
       />
-      <ProfessionalServiceSchema />
-      <ServiceSchema name="Amazon PPC Management" description="Performance-driven Amazon PPC management across Sponsored Products, Brands, and Display with proven ACOS reduction methodology." />
-      <FAQSchema faqs={faqs} />
 
       <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950" />

@@ -1,8 +1,7 @@
-import { Helmet } from 'react-helmet-async';
 import { SITE_URL, EMAIL } from '../lib/constants';
 
-export function ProfessionalServiceSchema() {
-  const schema = {
+export function buildProfessionalServiceSchema(): Record<string, unknown> {
+  return {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     name: 'NextArc',
@@ -18,21 +17,10 @@ export function ProfessionalServiceSchema() {
     },
     areaServed: ['AE', 'SA', 'US', 'GB', 'TR'],
   };
-
-  return (
-    <Helmet>
-      <script type="application/ld+json">{JSON.stringify(schema)}</script>
-    </Helmet>
-  );
 }
 
-interface ServiceSchemaProps {
-  name: string;
-  description: string;
-}
-
-export function ServiceSchema({ name, description }: ServiceSchemaProps) {
-  const schema = {
+export function buildServiceSchema(name: string, description: string): Record<string, unknown> {
+  return {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name,
@@ -43,12 +31,6 @@ export function ServiceSchema({ name, description }: ServiceSchemaProps) {
       url: SITE_URL,
     },
   };
-
-  return (
-    <Helmet>
-      <script type="application/ld+json">{JSON.stringify(schema)}</script>
-    </Helmet>
-  );
 }
 
 interface FAQItem {
@@ -56,8 +38,8 @@ interface FAQItem {
   answer: string;
 }
 
-export function FAQSchema({ faqs }: { faqs: FAQItem[] }) {
-  const schema = {
+export function buildFAQSchema(faqs: FAQItem[]): Record<string, unknown> {
+  return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: faqs.map((faq) => ({
@@ -69,12 +51,6 @@ export function FAQSchema({ faqs }: { faqs: FAQItem[] }) {
       },
     })),
   };
-
-  return (
-    <Helmet>
-      <script type="application/ld+json">{JSON.stringify(schema)}</script>
-    </Helmet>
-  );
 }
 
 interface BlogPostingSchemaProps {
@@ -84,8 +60,8 @@ interface BlogPostingSchemaProps {
   url: string;
 }
 
-export function BlogPostingSchema({ headline, description, datePublished, url }: BlogPostingSchemaProps) {
-  const schema = {
+export function buildBlogPostingSchema({ headline, description, datePublished, url }: BlogPostingSchemaProps): Record<string, unknown> {
+  return {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline,
@@ -98,10 +74,4 @@ export function BlogPostingSchema({ headline, description, datePublished, url }:
       url: SITE_URL,
     },
   };
-
-  return (
-    <Helmet>
-      <script type="application/ld+json">{JSON.stringify(schema)}</script>
-    </Helmet>
-  );
 }

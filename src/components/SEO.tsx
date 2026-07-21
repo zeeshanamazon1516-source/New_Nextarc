@@ -6,9 +6,10 @@ interface SEOProps {
   description: string;
   path: string;
   type?: string;
+  schemas?: Record<string, unknown>[];
 }
 
-export default function SEO({ title, description, path, type = 'website' }: SEOProps) {
+export default function SEO({ title, description, path, type = 'website', schemas }: SEOProps) {
   const url = `${SITE_URL}${path}`;
   const ogImage = `${SITE_URL}/og-image.png`;
 
@@ -26,6 +27,9 @@ export default function SEO({ title, description, path, type = 'website' }: SEOP
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
+      {schemas?.map((schema, i) => (
+        <script key={i} type="application/ld+json">{JSON.stringify(schema)}</script>
+      ))}
     </Helmet>
   );
 }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Clock, Calendar, ArrowRight } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import SEO from '../components/SEO';
-import { ProfessionalServiceSchema, BlogPostingSchema } from '../components/JsonLd';
+import { buildProfessionalServiceSchema, buildBlogPostingSchema } from '../components/JsonLd';
 import { SITE_URL } from '../lib/constants';
 
 export interface BlogPostData {
@@ -110,17 +110,16 @@ export default function Blog() {
         title="Ecommerce & Marketplace Growth Blog | NextArc"
         description="Practical guides on Amazon UAE, Noon, Trendyol, quick commerce, and international expansion for GCC ecommerce brands."
         path="/blog"
+        schemas={[
+          buildProfessionalServiceSchema(),
+          ...posts.map((post) => buildBlogPostingSchema({
+            headline: post.title,
+            description: post.excerpt,
+            datePublished: post.dateISO,
+            url: `${SITE_URL}/blog/${post.slug}`,
+          })),
+        ]}
       />
-      <ProfessionalServiceSchema />
-      {posts.map((post) => (
-        <BlogPostingSchema
-          key={post.slug}
-          headline={post.title}
-          description={post.excerpt}
-          datePublished={post.dateISO}
-          url={`${SITE_URL}/blog/${post.slug}`}
-        />
-      ))}
 
       <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden section-soft">
         <div className="container-max mx-auto px-4 sm:px-6 lg:px-8 relative">

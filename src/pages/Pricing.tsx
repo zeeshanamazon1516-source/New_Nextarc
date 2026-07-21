@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ScrollReveal from '../components/ScrollReveal';
 import SectionHeading from '../components/SectionHeading';
 import SEO from '../components/SEO';
-import { ProfessionalServiceSchema, FAQSchema } from '../components/JsonLd';
+import { buildProfessionalServiceSchema, buildFAQSchema } from '../components/JsonLd';
 
 const plans = [
   {
@@ -77,9 +77,8 @@ export default function Pricing() {
         title="Pricing & Plans for Marketplace Management | NextArc"
         description="Flexible month-to-month plans for Amazon, Noon & Trendyol management. No long-term contracts. Book a free consultation and get a custom growth roadmap."
         path="/pricing"
+        schemas={[buildProfessionalServiceSchema(), buildFAQSchema(faqs)]}
       />
-      <ProfessionalServiceSchema />
-      <FAQSchema faqs={faqs} />
 
       <section className="relative pt-28 pb-20 sm:pt-36 sm:pb-28 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950" />

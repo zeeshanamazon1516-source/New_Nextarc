@@ -5,7 +5,7 @@ import ScrollReveal from '../components/ScrollReveal';
 import SectionHeading from '../components/SectionHeading';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
-import { ProfessionalServiceSchema } from '../components/JsonLd';
+import { buildProfessionalServiceSchema } from '../components/JsonLd';
 
 const reasons = [
   { icon: BarChart3, title: 'Performance Advertising Experts', desc: 'Certified marketplace ads specialists managing $25M+ in annual ad spend across Amazon, Noon, and Trendyol.' },
@@ -110,8 +110,8 @@ export default function About() {
         title="About NextArc | Marketplace Advertising Experts in Dubai, UAE"
         description="Meet NextArc — performance advertising specialists managing 25+ brands across Amazon, Noon, and Trendyol, with proven USA & UK market expansion experience."
         path="/about"
+        schemas={[buildProfessionalServiceSchema()]}
       />
-      <ProfessionalServiceSchema />
 
       <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden section-soft">
         <div className="container-max mx-auto px-4 sm:px-6 lg:px-8 relative">

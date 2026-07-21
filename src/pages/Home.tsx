@@ -5,7 +5,7 @@ import { trackEvent } from '../lib/analytics';
 import ScrollReveal from '../components/ScrollReveal';
 import SectionHeading from '../components/SectionHeading';
 import SEO from '../components/SEO';
-import { ProfessionalServiceSchema } from '../components/JsonLd';
+import { buildProfessionalServiceSchema } from '../components/JsonLd';
 
 const services = [
   { image: 'https://images.pexels.com/photos/7681091/pexels-photo-7681091.jpeg?auto=compress&cs=tinysrgb&w=200', title: 'Account Management', desc: 'Full-service marketplace management across Amazon, Noon, and Trendyol.' },
@@ -81,8 +81,8 @@ export default function Home() {
         title="Ecommerce Marketplace Ad Agency | Amazon, Noon & Trendyol | NextArc"
         description="NextArc is a Dubai-based ecommerce ad agency managing brands on Amazon, Noon & Trendyol. PPC, listing optimization, account management & USA/UK expansion. Free audit."
         path="/"
+        schemas={[buildProfessionalServiceSchema()]}
       />
-      <ProfessionalServiceSchema />
 
       {/* Hero Section */}
       <section className="relative pt-24 lg:pt-28 pb-16 lg:pb-20 overflow-hidden">

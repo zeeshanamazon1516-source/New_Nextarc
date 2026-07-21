@@ -4,7 +4,7 @@ import { WHATSAPP_URL } from '../lib/constants';
 import { trackEvent } from '../lib/analytics';
 import ScrollReveal from '../components/ScrollReveal';
 import SEO from '../components/SEO';
-import { ProfessionalServiceSchema } from '../components/JsonLd';
+import { buildProfessionalServiceSchema } from '../components/JsonLd';
 
 const cases = [
   {
@@ -86,8 +86,8 @@ export default function CaseStudies() {
         title="Case Studies: Real Amazon & Noon Growth Results | NextArc"
         description="Real results from real brands: 120% sales growth, ACOS cut from 45% to 18%, $200K UK launch in 60 days. See how NextArc scales marketplace brands."
         path="/case-studies"
+        schemas={[buildProfessionalServiceSchema()]}
       />
-      <ProfessionalServiceSchema />
 
       <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden section-soft">
         <div className="container-max mx-auto px-4 sm:px-6 lg:px-8 relative">

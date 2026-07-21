@@ -4,7 +4,7 @@ import { WHATSAPP_URL } from '../../lib/constants';
 import { trackEvent } from '../../lib/analytics';
 import ScrollReveal from '../../components/ScrollReveal';
 import SEO from '../../components/SEO';
-import { ProfessionalServiceSchema, ServiceSchema, FAQSchema } from '../../components/JsonLd';
+import { buildProfessionalServiceSchema, buildServiceSchema, buildFAQSchema } from '../../components/JsonLd';
 
 const faqs = [
   { question: 'How long does it take to launch on Amazon USA or UK from the UAE?', answer: 'A typical launch takes 45-60 days from initial setup to live products with active advertising. This includes account verification, brand registry, listing creation, FBA inbound shipments, and initial PPC campaign launch. We handle every step.' },
@@ -19,10 +19,12 @@ export default function UsaUkExpansion() {
         title="Amazon USA & UK Expansion for UAE Brands | NextArc"
         description="End-to-end Amazon USA and UK market entry for UAE brands. FBA setup, compliance, localized listings, and launch advertising with proven $200K+ results."
         path="/services/usa-uk-expansion"
+        schemas={[
+          buildProfessionalServiceSchema(),
+          buildServiceSchema('International Expansion: Amazon USA & UK', 'Complete market entry service for UAE brands expanding to Amazon USA and UK, including FBA setup, compliance, and launch advertising.'),
+          buildFAQSchema(faqs),
+        ]}
       />
-      <ProfessionalServiceSchema />
-      <ServiceSchema name="International Expansion: Amazon USA & UK" description="Complete market entry service for UAE brands expanding to Amazon USA and UK, including FBA setup, compliance, and launch advertising." />
-      <FAQSchema faqs={faqs} />
 
       <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950" />
