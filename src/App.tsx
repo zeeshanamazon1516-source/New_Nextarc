@@ -19,6 +19,7 @@ import TrendyolAds from './pages/services/TrendyolAds';
 import UsaUkExpansion from './pages/services/UsaUkExpansion';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import Emergency from './pages/Emergency';
 import NotFound from './pages/NotFound';
 
 function ScrollToTop() {
@@ -68,6 +69,7 @@ export default function App() {
         <Route path="/contact" element={<WithLayout><Contact /></WithLayout>} />
         <Route path="/privacy-policy" element={<WithLayout><PrivacyPolicy /></WithLayout>} />
         <Route path="/terms-of-service" element={<WithLayout><TermsOfService /></WithLayout>} />
+        <Route path="/emergency" element={<WithLayout><Emergency /></WithLayout>} />
         <Route path="*" element={<WithLayout><NotFound /></WithLayout>} />
       </Routes>
     </>
